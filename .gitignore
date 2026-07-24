@@ -1,0 +1,29 @@
+# === Android SDK Platform Tools ===
+platform-tools/
+
+# === External boot manager ===
+flash-kit/utils/refind/
+
+# === Large ISO image ===
+flash-kit/iso/xubuntu-24.04.4-desktop-amd64.iso
+
+# === Prebuilt kernel packages ===
+flash-kit/kernel/*.deb
+
+# === Cloned third-party repos ===
+flash-kit/firmware/mipad2_linux_bluetooth_firmware/
+
+# === Backup directories ===
+flash-kit/backup/
+
+# === Compression artifacts ===
+*.ko.zst
+*.ko
+
+# === Temporary / build artifacts ===
+*.o
+*.mod
+*.mod.c
+*.order
+*.symvers
+modules.builtin

@@ -1,0 +1,245 @@
+Physical size: 1536x2048
+Physical density: 320
+=== SurfaceFlinger ===
+Build configuration: [sf] [libui] [libgui]
+Sync configuration: [using: EGL_ANDROID_native_fence_sync EGL_KHR_wait_sync]
+DispSync configuration: app phase 7500000 ns, sf phase 5000000 ns, present offset 0 ns (refresh 16666666 ns)
+Visible layers (count = 8)
++ LayerDim 0x7f24d2f59000 (DimLayer)
+  Region transparentRegion (this=0x7f24d2f591f0, count=1)
+    [  0,   0,   0,   0]
+  Region visibleRegion (this=0x7f24d2f59020, count=1)
+    [  0,   0,   0,   0]
+      layerStack=   0, z=        0, pos=(0,0), size=(  16,  16), crop=(   0,   0,  -1,  -1), isOpaque=0, invalidate=0, alpha=0xff, flags=0x00000001, tr=[1.00, 0.00][0.00, 1.00]
+      client=0x7f24d7012200
+      format= 0, activeBuffer=[   0x   0:   0,  0], queued-frames=0, mRefreshPending=0
+            mTexName=13 mCurrentTexture=-1
+            mCurrentCrop=[0,0,0,0] mCurrentTransform=0
+            mAbandoned=0
+            -BufferQueue mMaxAcquiredBufferCount=1, mDequeueBufferCannotBlock=0, default-size=[1x1], default-format=1, transform-hint=00, FIFO(0)={}
++ LayerDim 0x7f24d256e000 (DimLayer)
+  Region transparentRegion (this=0x7f24d256e1f0, count=1)
+    [  0,   0,   0,   0]
+  Region visibleRegion (this=0x7f24d256e020, count=1)
+    [  0,   0,   0,   0]
+      layerStack=   0, z=        0, pos=(0,0), size=(  16,  16), crop=(   0,   0,  -1,  -1), isOpaque=0, invalidate=0, alpha=0xff, flags=0x00000001, tr=[1.00, 0.00][0.00, 1.00]
+      client=0x7f24d7012200
+      format= 0, activeBuffer=[   0x   0:   0,  0], queued-frames=0, mRefreshPending=0
+            mTexName=14 mCurrentTexture=-1
+            mCurrentCrop=[0,0,0,0] mCurrentTransform=0
+            mAbandoned=0
+            -BufferQueue mMaxAcquiredBufferCount=1, mDequeueBufferCannotBlock=0, default-size=[1x1], default-format=1, transform-hint=00, FIFO(0)={}
++ LayerDim 0x7f24d273d000 (DimLayer)
+  Region transparentRegion (this=0x7f24d273d1f0, count=1)
+    [  0,   0,   0,   0]
+  Region visibleRegion (this=0x7f24d273d020, count=1)
+    [  0,   0,   0,   0]
+      layerStack=   0, z=    20999, pos=(-384,-512), size=(2304,3072), crop=(   0,   0,  -1,  -1), isOpaque=0, invalidate=0, alpha=0x00, flags=0x00000001, tr=[1.00, 0.00][0.00, 1.00]
+      client=0x7f24d7012200
+      format= 0, activeBuffer=[   0x   0:   0,  0], queued-frames=0, mRefreshPending=0
+            mTexName=16 mCurrentTexture=-1
+            mCurrentCrop=[0,0,0,0] mCurrentTransform=0
+            mAbandoned=0
+            -BufferQueue mMaxAcquiredBufferCount=1, mDequeueBufferCannotBlock=0, default-size=[2304x3072], default-format=1, transform-hint=00, FIFO(0)={}
++ Layer 0x7f24d2537000 (com.android.systemui.ImageWallpaper)
+  Region transparentRegion (this=0x7f24d25371f0, count=1)
+    [  0,   0,   0,   0]
+  Region visibleRegion (this=0x7f24d2537020, count=1)
+    [  0,   0, 1536, 2048]
+      layerStack=   0, z=    21000, pos=(0,0), size=(1536,2048), crop=(   0,   0,1536,2048), isOpaque=1, invalidate=0, alpha=0xff, flags=0x00000002, tr=[1.00, 0.00][0.00, 1.00]
+      client=0x7f24d7012ca0
+      format= 2, activeBuffer=[1536x2048:1536,  2], queued-frames=0, mRefreshPending=0
+            mTexName=19 mCurrentTexture=0
+            mCurrentCrop=[0,0,0,0] mCurrentTransform=0
+            mAbandoned=0
+            -BufferQueue mMaxAcquiredBufferCount=1, mDequeueBufferCannotBlock=0, default-size=[1536x2048], default-format=2, transform-hint=00, FIFO(0)={}
++ Layer 0x7f24d184c000 (com.miui.home/com.miui.home.launcher.Launcher)
+  Region transparentRegion (this=0x7f24d184c1f0, count=1)
+    [  0,   0,   0,   0]
+  Region visibleRegion (this=0x7f24d184c020, count=1)
+    [  0,   0, 1536, 2048]
+      layerStack=   0, z=    21030, pos=(0,0), size=(1536,2048), crop=(   0,   0,1536,2048), isOpaque=0, invalidate=0, alpha=0xff, flags=0x00000000, tr=[1.00, 0.00][0.00, 1.00]
+      client=0x7f24d70132e0
+      format= 1, activeBuffer=[1536x2048:1536,  1], queued-frames=0, mRefreshPending=0
+            mTexName=17 mCurrentTexture=2
+            mCurrentCrop=[0,0,0,0] mCurrentTransform=0
+            mAbandoned=0
+            -BufferQueue mMaxAcquiredBufferCount=1, mDequeueBufferCannotBlock=0, default-size=[1536x2048], default-format=1, transform-hint=00, FIFO(0)={}
+             [00:0x7f24d181ca60] state=DEQUEUED, 0x7f24d25c2f10 [1536x2048:1536,  1]
+             [01:0x7f24d70300c0] state=FREE    , 0x7f24d7021150 [1536x2048:1536,  1]
+            >[02:0x7f24d702fe20] state=ACQUIRED, 0x7f24d70212e0 [1536x2048:1536,  1]
++ Layer 0x7f24d24ea000 (FocusedStackFrame)
+  Region transparentRegion (this=0x7f24d24ea1f0, count=1)
+    [  0,   0,   0,   0]
+  Region visibleRegion (this=0x7f24d24ea020, count=1)
+    [  0,   0,   0,   0]
+      layerStack=   0, z=    21031, pos=(0,0), size=(   1,   1), crop=(   0,   0,  -1,  -1), isOpaque=0, invalidate=0, alpha=0x4d, flags=0x00000001, tr=[1.00, 0.00][0.00, 1.00]
+      client=0x7f24d7012200
+      format= 1, activeBuffer=[   0x   0:   0,  0], queued-frames=0, mRefreshPending=0
+            mTexName=12 mCurrentTexture=-1
+            mCurrentCrop=[0,0,0,0] mCurrentTransform=0
+            mAbandoned=0
+            -BufferQueue mMaxAcquiredBufferCount=1, mDequeueBufferCannotBlock=0, default-size=[1x1], default-format=1, transform-hint=00, FIFO(0)={}
++ LayerDim 0x7f24d2584000 (DimLayer)
+  Region transparentRegion (this=0x7f24d25841f0, count=1)
+    [  0,   0,   0,   0]
+  Region visibleRegion (this=0x7f24d2584020, count=1)
+    [  0,   0,   0,   0]
+      layerStack=   0, z=    22034, pos=(-384,-512), size=(2304,3072), crop=(   0,   0,  -1,  -1), isOpaque=0, invalidate=0, alpha=0x00, flags=0x00000001, tr=[1.00, 0.00][0.00, 1.00]
+      client=0x7f24d7012200
+      format= 0, activeBuffer=[   0x   0:   0,  0], queued-frames=0, mRefreshPending=0
+            mTexName=15 mCurrentTexture=-1
+            mCurrentCrop=[0,0,0,0] mCurrentTransform=0
+            mAbandoned=0
+            -BufferQueue mMaxAcquiredBufferCount=1, mDequeueBufferCannotBlock=0, default-size=[2304x3072], default-format=1, transform-hint=00, FIFO(0)={}
++ Layer 0x7f24d2518000 (StatusBar)
+  Region transparentRegion (this=0x7f24d25181f0, count=1)
+    [  0,   0,   0,   0]
+  Region visibleRegion (this=0x7f24d2518020, count=1)
+    [  0,   0, 1536,  48]
+      layerStack=   0, z=   151000, pos=(0,0), size=(1536,  48), crop=(   0,   0,1536,  48), isOpaque=0, invalidate=0, alpha=0xff, flags=0x00000000, tr=[1.00, 0.00][0.00, 1.00]
+      client=0x7f24d7012ca0
+      format= 1, activeBuffer=[1536x  48:1536,  1], queued-frames=0, mRefreshPending=0
+            mTexName=18 mCurrentTexture=1
+=== display ===
+DISPLAY MANAGER (dumpsys display)
+  mOnlyCode=false
+  mSafeMode=false
+  mPendingTraversal=false
+  mGlobalDisplayState=ON
+  mNextNonDefaultDisplayId=1
+  mDefaultViewport=DisplayViewport{valid=true, displayId=0, orientation=0, logicalFrame=Rect(0, 0 - 1536, 2048), physicalFrame=Rect(0, 0 - 1536, 2048), deviceWidth=1536, deviceHeight=2048}
+  mExternalTouchViewport=DisplayViewport{valid=false, displayId=0, orientation=0, logicalFrame=Rect(0, 0 - 0, 0), physicalFrame=Rect(0, 0 - 0, 0), deviceWidth=0, deviceHeight=0}
+  mSingleDisplayDemoMode=false
+  mWifiDisplayScanRequestCount=0
+
+Display Adapters: size=4
+  LocalDisplayAdapter
+  OverlayDisplayAdapter
+    mCurrentOverlaySetting=
+    mOverlays: size=0
+  WifiDisplayAdapter
+    mCurrentStatus=WifiDisplayStatus{featureState=2, scanState=0, activeDisplayState=0, activeDisplay=null, displays=[], sessionInfo=WifiDisplaySessionInfo:
+        Client/Owner: Client
+        GroupId: 
+        Passphrase: 
+        SessionId: 0
+        IP Address: }
+    mFeatureState=2
+    mScanState=0
+    mActiveDisplayState=0
+    mActiveDisplay=null
+    mDisplays=[]
+    mAvailableDisplays=[]
+    mRememberedDisplays=[]
+    mPendingStatusChangeBroadcast=false
+    mSupportsProtectedBuffers=true
+    mDisplayController:
+      mWifiDisplayOnSetting=false
+      mWifiP2pEnabled=true
+      mWfdEnabled=false
+      mWfdEnabling=false
+      mNetworkInfo=[type: WIFI_P2P[], state: UNKNOWN/IDLE, reason: (unspecified), extra: (none), roaming: false, failover: false, isAvailable: true, isConnectedToProvisioningNetwork: false]
+      mScanRequested=false
+      mDiscoverPeersInProgress=false
+      mDesiredDevice=null
+      mConnectingDisplay=null
+      mDisconnectingDisplay=null
+      mCancelingDisplay=null
+      mConnectedDevice=null
+      mConnectionRetriesLeft=0
+      mRemoteDisplay=null
+      mRemoteDisplayInterface=null
+      mRemoteDisplayConnected=false
+      mAdvertisedDisplay=null
+      mAdvertisedDisplaySurface=null
+      mAdvertisedDisplayWidth=0
+      mAdvertisedDisplayHeight=0
+      mAdvertisedDisplayFlags=0
+      mIsCP=true
+      mAvailableWifiDisplayPeers: size=0
+  VirtualDisplayAdapter
+
+Display Devices: size=1
+  DisplayDeviceInfo{"内置屏幕": uniqueId="local:0", 1536 x 2048, 60.000004 fps, supportedRefreshRates [60.000004, 60.000004], density 320, 325.12 x 325.12 dpi, appVsyncOff 7500000, presDeadline 12666666, touch INTERNAL, rotation 0, type BUILT_IN, state ON, FLAG_DEFAULT_DISPLAY, FLAG_ROTATES_WITH_CONTENT, FLAG_SECURE, FLAG_SUPPORTS_PROTECTED_BUFFERS}
+    mAdapter=LocalDisplayAdapter
+    mUniqueId=local:0
+    mDisplayToken=android.os.BinderProxy@71edf72
+    mCurrentLayerStack=0
+    mCurrentOrientation=0
+    mCurrentLayerStackRect=Rect(0, 0 - 1536, 2048)
+    mCurrentDisplayRect=Rect(0, 0 - 1536, 2048)
+    mCurrentSurface=null
+    mBuiltInDisplayId=0
+    mPhys=PhysicalDisplayInfo{1536 x 2048, 60.000004 fps, density 2.0, 325.12 x 325.12 dpi, secure true, appVsyncOffset 7500000, bufferDeadline 12666666}
+    mState=ON
+
+Logical Displays: size=1
+  Display 0:
+    mDisplayId=0
+    mLayerStack=0
+    mHasContent=true
+    mPrimaryDisplayDevice=内置屏幕
+    mBaseDisplayInfo=DisplayInfo{"内置屏幕", uniqueId "local:0", app 1536 x 2048, real 1536 x 2048, largest app 1536 x 2048, smallest app 1536 x 2048, 60.000004 fps, supportedRefreshRates [60.000004, 60.000004], rotation 0, density 320 (325.12 x 325.12) dpi, layerStack 0, appVsyncOff 7500000, presDeadline 12666666, type BUILT_IN, state ON, FLAG_SECURE, FLAG_SUPPORTS_PROTECTED_BUFFERS}
+    mOverrideDisplayInfo=DisplayInfo{"内置屏幕", uniqueId "local:0", app 1536 x 2048, real 1536 x 2048, largest app 2048 x 2000, smallest app 1536 x 1488, 60.000004 fps, supportedRefreshRates [60.000004, 60.000004], rotation 0, density 320 (325.12 x 325.12) dpi, layerStack 0, appVsyncOff 7500000, presDeadline 12666666, type BUILT_IN, state ON, FLAG_SECURE, FLAG_SUPPORTS_PROTECTED_BUFFERS}
+=== window ===
+
+WINDOW MANAGER LAST ANR (dumpsys window lastanr)
+  <no ANR has occurred since boot>
+
+WINDOW MANAGER POLICY STATE (dumpsys window policy)
+    mSafeMode=false mSystemReady=true mSystemBooted=true
+    mLidState=1 mLidOpenRotation=-1 mCameraLensCoverState=-1 mHdmiPlugged=false
+    mLastSystemUiFlags=0x40000700 mResettingSystemUiFlags=0x0 mForceClearedSystemUiFlags=0x0
+    mWakeGestureEnabledSetting=false
+    mSupportAutoRotation=true
+    mUiMode=1 mDockMode=0 mCarDockRotation=-1 mDeskDockRotation=-1
+    mUserRotationMode=0 mUserRotation=0 mAllowAllRotations=1
+    mCurrentAppOrientation=2
+    mCarDockEnablesAccelerometer=true mDeskDockEnablesAccelerometer=true
+    mLidKeyboardAccessibility=0 mLidNavigationAccessibility=0 mLidControlsSleep=true
+    mShortPressOnPowerBehavior=1 mLongPressOnPowerBehavior=1
+    mDoublePressOnPowerBehavior=0 mTriplePressOnPowerBehavior=0
+    mHasSoftInput=true
+    mAwake=true
+    mScreenOnEarly=true mScreenOnFully=true
+    mKeyguardDrawComplete=true mWindowManagerDrawComplete=true
+    mOrientationSensorEnabled=true
+    mOverscanScreen=(0,0) 1536x2048
+    mRestrictedOverscanScreen=(0,0) 1536x2048
+    mUnrestrictedScreen=(0,0) 1536x2048
+    mRestrictedScreen=(0,0) 1536x2048
+    mStableFullscreen=(0,0)-(1536,2048)
+    mStable=(0,48)-(1536,2048)
+    mSystem=(0,0)-(1536,2048)
+    mCur=(0,48)-(1536,2048)
+    mContent=(0,48)-(1536,2048)
+    mVoiceContent=(0,48)-(1536,2048)
+    mDock=(0,48)-(1536,2048)
+    mDockLayer=268435456 mStatusBarLayer=151000
+    mShowingLockscreen=false mShowingDream=false mDreamingLockscreen=false
+    mStatusBar=Window{8bf8c80 u0 StatusBar}
+    isStatusBarKeyguard=false    mFocusedWindow=Window{12623bee u0 com.miui.home/com.miui.home.launcher.Launcher}
+    mFocusedApp=Token{e5f330f ActivityRecord{3bc906e u0 com.miui.home/.launcher.Launcher t42}}
+    mTopFullscreenOpaqueWindowState=Window{12623bee u0 com.miui.home/com.miui.home.launcher.Launcher}
+    mTopIsFullscreen=false mHideLockScreen=false
+    mForceStatusBar=false mForceStatusBarFromKeyguard=false
+    mDismissKeyguard=0 mWinDismissingKeyguard=null mHomePressed=false
+    mAllowLockscreenWhenOn=false mLockScreenTimeout=60000 mLockScreenTimerActive=false
+    mEndcallBehavior=2 mIncallPowerBehavior=1 mLongPressOnHomeBehavior=0
+    mLandscapeRotation=1 mSeascapeRotation=3
+    mPortraitRotation=0 mUpsideDownRotation=2
+    mDemoHdmiRotation=1 mDemoHdmiRotationLock=false
+    mUndockedHdmiRotation=-1
+    mKeyMapping.size=0
+    BarController.StatusBar
+      mState=WINDOW_STATE_SHOWING
+      mTransientBar=TRANSIENT_BAR_NONE
+    PolicyControl.sImmersiveStatusFilter=null
+    PolicyControl.sImmersiveNavigationFilter=null
+    PolicyControl.sImmersivePreconfirmationsFilter=null
+    WakeGestureListener
+      mTriggerRequested=false
+      mSensor=null
+    WindowOrientationListener
+      mEnabled=true

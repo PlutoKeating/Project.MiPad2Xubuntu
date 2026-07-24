@@ -1,0 +1,215 @@
+Camera module HAL API version: 0x0
+Camera module API version: 0x203
+Camera module name: Intel Camera3HAL Module
+Camera module author: Intel
+Number of camera devices: 2
+
+Vendor tag definitions:
+    Dumping configured vendor tag descriptors: 27 entries
+      0x80000000 (availableGroups) with type 0 (byte) defined in section com.intel.extensions
+      0x80010000 (analysisMode) with type 0 (byte) defined in section com.intel.statistics
+      0x80010001 (multiFrameHint) with type 0 (byte) defined in section com.intel.statistics
+      0x80010002 (sceneDetected) with type 0 (byte) defined in section com.intel.statistics
+      0x80020000 (smileDetectMode) with type 0 (byte) defined in section com.intel.cv
+      0x80020001 (blinkDetectMode) with type 0 (byte) defined in section com.intel.cv
+      0x80020002 (faceRecognizeMode) with type 0 (byte) defined in section com.intel.cv
+      0x80020003 (smileDetectStatus) with type 0 (byte) defined in section com.intel.cv
+      0x80020004 (smileDetectScores) with type 1 (int32) defined in section com.intel.cv
+      0x80020005 (blinkDetectStatus) with type 0 (byte) defined in section com.intel.cv
+      0x80020006 (blinkDetectScores) with type 1 (int32) defined in section com.intel.cv
+      0x80020007 (faceRecognizePersonIds) with type 1 (int32) defined in section com.intel.cv
+      0x80020008 (faceRecognizePersonSimilarities) with type 1 (int32) defined in section com.intel.cv
+      0x80020009 (faceDetectRipAngles) with type 1 (int32) defined in section com.intel.cv
+      0x8002000a (faceDetectRopAngles) with type 1 (int32) defined in section com.intel.cv
+      0x80030000 (availableFaceRecognize) with type 0 (byte) defined in section com.intel.cv.info
+      0x80030001 (availableObjectTrack) with type 0 (byte) defined in section com.intel.cv.info
+      0x80040000 (dualCameraMode) with type 0 (byte) defined in section com.intel.device
+      0x80050000 (availableDualCameraMode) with type 0 (byte) defined in section com.intel.device.info
+      0x80060000 (colorEffect) with type 0 (byte) defined in section com.intel.imageEnhance
+      0x80060001 (brightness) with type 1 (int32) defined in section com.intel.imageEnhance
+      0x80060002 (contrast) with type 1 (int32) defined in section com.intel.imageEnhance
+      0x80060003 (saturation) with type 1 (int32) defined in section com.intel.imageEnhance
+      0x80060004 (hue) with type 1 (int32) defined in section com.intel.imageEnhance
+      0x80060005 (sharpness) with type 1 (int32) defined in section com.intel.imageEnhance
+      0x80070000 (availablecolorEffects) with type 0 (byte) defined in section com.intel.imageEnhance.info
+      0x80070001 (availableManualControls) with type 0 (byte) defined in section com.intel.imageEnhance.info
+Camera 0 static information:
+  Facing: BACK
+  Orientation: 90
+  Device version: 0x302
+  Device static metadata:
+    Dumping camera metadata array: 91 / 256 entries, 4480 / 6688 bytes of extra data.
+      Version: 1, Flags: 00000000
+      android.colorCorrection.availableAberrationModes (00004): byte[1]
+        [0 ]
+      android.control.aeAvailableAntibandingModes (10012): byte[4]
+        [0 1 2 3 ]
+      android.control.aeAvailableModes (10013): byte[2]
+        [0 1 ]
+      android.control.aeAvailableTargetFpsRanges (10014): int32[4]
+        [5 30 30 30 ]
+      android.control.aeCompensationRange (10015): int32[2]
+        [-4 4 ]
+      android.control.aeCompensationStep (10016): rational[1]
+        [(1 / 2) ]
+      android.control.afAvailableModes (10017): byte[5]
+        [0 1 2 4 3 ]
+      android.control.availableEffects (10018): byte[4]
+        [0 1 2 4 ]
+      android.control.awbAvailableModes (1001b): byte[9]
+        [0 1 2 3 4 5 6 8 7 ]
+      android.control.availableSceneModes (10019): byte[9]
+        [2 3 4 5 6 12 13 16 1 ]
+      android.control.sceneModeOverrides (1001d): byte[27]
+        [1 1 4 1 1 1 1 1 1 1 1 1 1 1 1 1 ]
+        [1 1 1 1 4 1 1 2 0 0 0 ]
+      android.control.availableVideoStabilizationModes (1001a): byte[1]
+        [0 ]
+      android.control.maxRegions (1001c): int32[3]
+        [1 0 1 ]
+      android.jpeg.maxSize (7000f): int32[1]
+        [11985408 ]
+      android.jpeg.availableThumbnailSizes (7000e): int32[8]
+        [0 0 160 120 ]
+        [320 180 320 240 ]
+      android.lens.info.availableApertures (90000): float[1]
+        [2.00000000 ]
+      android.lens.info.availableFilterDensities (90001): float[1]
+        [0.00000000 ]
+      android.lens.info.availableFocalLengths (90002): float[1]
+        [2.96000004 ]
+      android.lens.info.availableOpticalStabilization (90003): byte[1]
+        [0 ]
+      android.lens.info.hyperfocalDistance (90004): float[1]
+        [0.45653757 ]
+      android.lens.info.minimumFocusDistance (90005): float[1]
+        [10.00000000 ]
+      android.lens.info.shadingMapSize (90006): int32[2]
+        [51 39 ]
+      android.lens.info.focusDistanceCalibration (90007): byte[1]
+        [APPROXIMATE ]
+      android.lens.facing (80005): byte[1]
+        [BACK ]
+      android.lens.opticalAxisAngle (80006): float[2]
+        [0.00000000 0.00000000 ]
+      android.lens.position (80007): float[3]
+        [0.00000000 0.00000000 0.00000000 ]
+      android.request.maxNumOutputStreams (c0006): int32[3]
+        [0 3 1 ]
+      android.request.pipelineMaxDepth (c000a): byte[1]
+        [5 ]
+=== camera config files ===
+camera3_profiles.xml
+camera_profiles.xml
+-- /system/etc/camera3_profiles.xml --
+/system/bin/sh: cat: /system/etc/camera3_profiles.xml: No such file or directory
+-- /system/etc/camera_profiles.xml --
+/system/bin/sh: cat: /system/etc/camera_profiles.xml: No such file or directory
+-- /system/etc/camera3_profiles.xml (head) --
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Copyright (c) 2015 Intel Corporation
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<CameraSettings>
+    <Profiles cameraId="0">
+        <Supported_hardware>
+            <hwType value="SUPPORTED_HW_CSS_2400"/> <!-- SUPPORTED_HW_CSS_2400,SUPPORTED_HW_CSS_2500,SUPPORTED_HW_CSS_2600,SUPPORTED_HW_USB -->
+        </Supported_hardware>
+
+        <Android_metadata> <!-- Android static metadata only -->
+            <!-- Color Correction -->
+            <colorCorrection.availableAberrationModes value="OFF"/>
+            <!-- Control -->
+            <control.aeAvailableAntibandingModes value="OFF,50HZ,60HZ,AUTO"/>
+            <control.aeAvailableModes value="OFF,ON"/>
+            <control.aeAvailableTargetFpsRanges value="5,30,30,30"/>
+            <control.availableHighSpeedVideoConfigurations value="1280,720,30,60"/>
+            <control.aeCompensationRange value="-4,4"/>
+            <control.aeCompensationStep value="1,2"/>
+            <control.afAvailableModes value="OFF,AUTO,MACRO,CONTINUOUS_PICTURE,CONTINUOUS_VIDEO"/>
+            <control.availableEffects value="OFF,MONO,NEGATIVE,SEPIA"/>
+            <control.awbAvailableModes value="OFF,AUTO,INCANDESCENT,FLUORESCENT,WARM_FLUORESCENT,DAYLIGHT,CLOUDY_DAYLIGHT,SHADE,TWILIGHT"/>
+            <control.availableSceneModes value="ACTION,PORTRAIT,LANDSCAPE,NIGHT,NIGHT_PORTRAIT,FIREWORKS,SPORTS,BARCODE,FACE_PRIORITY"/>
+            <!-- AE/AWB/AF mode: ACTION, PORTRAIT, LANDSCAPE, NIGHT, N_P FWS SPORTS BARCODE-->
+            <control.sceneModeOverrides value="ON,AUTO,CONTINUOUS_PICTURE,ON,AUTO,AUTO,ON,AUTO,AUTO,ON,AUTO,AUTO,ON,AUTO,AUTO,ON,AUTO,AUTO,ON,AUTO,CONTINUOUS_PICTURE,ON,AUTO,MACRO,0,0,0"/>
+            <control.availableVideoStabilizationModes value="OFF"/>
+            <control.maxRegions value="1,0,1"/>
+            <!-- JPEG -->
+            <jpeg.maxSize value="11985408"/>  <!-- 3264x2448*1.5 -->
+            <jpeg.availableThumbnailSizes value="0,0,160,120,320,180,320,240"/>
+            <!-- Lens Info-->
+            <lens.info.availableApertures value="2.53"/>
+            <lens.info.availableFilterDensities value="0.0"/>
+            <lens.info.availableFocalLengths value="3.00"/>
+            <lens.info.availableOpticalStabilization value="OFF"/> <!-- VALUE, ENUM -->
+            <lens.info.hyperfocalDistance value="0.0"/> <!-- TODO VALUE -->
+            <lens.info.minimumFocusDistance value="20.00"/>
+            <lens.info.shadingMapSize value="41,31"/>
+            <lens.info.focusDistanceCalibration value="APPROXIMATE"/>
+            <!-- Lens -->
+            <lens.facing value="BACK"/>
+            <lens.opticalAxisAngle value="0.0,0.0"/> <!-- TODO VALUE -->
+            <lens.position value="0.0,0.0,0.0"/> <!-- TODO VALUE -->
+            <!-- Request -->
+            <request.maxNumOutputStreams value="0,3,1"/> <!--raw sensor format output stream number, max YUV streams number, max JPEG stream number-->
+            <request.pipelineMaxDepth value="5"/> <!-- TODO VALUE -->
+            <request.maxNumOutputRaw value="0"/>
+
+=== Camera 1 (front) static info ===
+Camera 1 static information:
+  Facing: FRONT
+  Orientation: 270
+  Device version: 0x302
+  Device static metadata:
+    Dumping camera metadata array: 90 / 256 entries, 4184 / 6688 bytes of extra data.
+      Version: 1, Flags: 00000000
+      android.colorCorrection.availableAberrationModes (00004): byte[1]
+        [0 ]
+      android.control.aeAvailableAntibandingModes (10012): byte[4]
+        [0 1 2 3 ]
+      android.control.aeAvailableModes (10013): byte[2]
+        [0 1 ]
+      android.control.aeAvailableTargetFpsRanges (10014): int32[4]
+        [5 30 30 30 ]
+      android.control.aeCompensationRange (10015): int32[2]
+        [-4 4 ]
+      android.control.aeCompensationStep (10016): rational[1]
+        [(1 / 2) ]
+      android.control.afAvailableModes (10017): byte[1]
+        [0 ]
+      android.control.availableEffects (10018): byte[4]
+        [0 1 2 4 ]
+      android.control.awbAvailableModes (1001b): byte[6]
+        [1 2 3 4 5 6 ]
+      android.control.availableSceneModes (10019): byte[9]
+        [2 3 4 5 6 12 13 16 1 ]
+      android.control.sceneModeOverrides (1001d): byte[27]
+        [1 1 0 1 1 0 1 1 0 1 1 0 1 1 0 1 ]
+        [1 0 1 1 0 1 1 0 0 202 154 ]
+=== camera sensor sizes ===
+      android.sensor.info.physicalSize (f0005): float[2]
+        [3.67400002 2.75999999 ]
+      android.sensor.info.pixelArraySize (f0006): int32[2]
+--
+      android.sensor.info.physicalSize (f0005): float[2]
+        [3.49900007 2.68799996 ]
+      android.sensor.info.pixelArraySize (f0006): int32[2]
+=== pixel array sizes ===
+back: 3280x2464 (8MP), front: 2592x1944 (5MP)
+=== GLES/GPU (SurfaceFlinger) ===
+GLES: Intel, Intel(R) HD Graphics for Atom(TM) x5/x7, OpenGL ES 3.1 - Build 4.51.125-R
+GL_EXT_blend_minmax GL_EXT_multi_draw_arrays GL_EXT_texture_filter_anisotropic GL_EXT_texture_border_clamp GL_OES_texture_border_clamp GL_EXT_texture_compression_s3tc GL_EXT_draw_buffers GL_EXT_color_buffer_float GL_EXT_draw_instanced GL_EXT_texture_rg GL_EXT_map_buffer_range GL_EXT_texture_buffer GL_OES_texture_buffer GL_INTEL_performance_query GL_EXT_shader_integer_mix GL_EXT_instanced_arrays GL_EXT_texture_cube_map_array GL_OES_texture_cube_map_array GL_EXT_gpu_shader5 GL_OES_gpu_shader5 GL_EXT_draw_buffers_indexed GL_OES_draw_buffers_indexed GL_EXT_shader_io_blocks GL_OES_shader_io_blocks GL_EXT_tessellation_shader GL_EXT_tessellation_point_size GL_OES_tessellation_shader GL_OES_tessellation_point_size GL_EXT_geometry_shader GL_EXT_geometry_point_size GL_OES_geometry_shader GL_OES_geometry_point_size GL_INTEL_fragment_shader_ordering GL_EXT_texture_storage GL_KHR_debug GL_OES_EGL_image GL_OES_depth24 GL_OES_packed_depth_stencil GL_OES_rgb8_rgba8 GL_OES_depth_texture GL_EXT_color_buffer_half_float GL_OES_vertex_half_float GL_EXT_shadow_samplers GL_OES_standard_derivatives GL_OES_mapbuffer GL_EXT_discard_framebuffer GL_EXT_texture_format_BGRA8888 GL_OES_compressed_paletted_texture GL_OES_EGL_image_external GL_OES_compressed_ETC1_RGB8_texture GL_OES_vertex_array_object GL_OES_get_program_binary GL_OES_texture_3D GL_OES_fbo_render_mipmap GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_element_index_uint GL_OES_texture_npot GL_EXT_sRGB GL_EXT_sRGB_write_control GL_EXT_frag_depth GL_APPLE_texture_max_level GL_EXT_occlusion_query_boolean GL_EXT_texture_compression_dxt1 GL_OES_required_internalformat GL_EXT_separate_shader_objects GL_OES_surfaceless_context GL_OES_EGL_sync GL_EXT_robustness GL_EXT_texture_sRGB_decode GL_EXT_shader_texture_lod GL_KHR_texture_compression_astc_ldr GL_EXT_unpack_subimage GL_EXT_read_format_bgra GL_EXT_debug_marker GL_EXT_copy_image GL_OES_copy_image GL_KHR_blend_equation_advanced GL_OES_sample_variables GL_OES_sample_shading GL_OES_shader_multisample_interpolation GL_OES_texture_stencil8 GL_OES_shader_image_atomic GL_OES_texture_storage_multisample_2d_array GL_INTEL_tessellation GL_INTEL_geometry_shader GL_EXT_buffer_storage GL_EXT_disjoint_timer_query GL_EXT_primitive_bounding_box GL_OES_primitive_bounding_box GL_ANDROID_extension_pack_es31a GL_EXT_YUV_target 
+  gpu_to_cpu_unsupported    : 0
+Hardware Composer state (version 01040000):

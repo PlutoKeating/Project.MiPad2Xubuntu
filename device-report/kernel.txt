@@ -1,0 +1,3 @@
+Linux version 3.14.37-x86_64-g172c52b (builder@c3-miui-ota-bd21.bj) (gcc version 4.8 (GCC) ) #1 SMP PREEMPT Mon Jul 2 17:18:37 CST 2018 
+---
+/system/bin/sh: cat: /proc/cmdline: Permission denied

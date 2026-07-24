@@ -1,0 +1,141 @@
+Filesystem               Size     Used     Free   Blksize
+/                      939.3M     5.9M   933.4M   4096
+/dev                   955.2M    56.0K   955.1M   4096
+/sys/fs/cgroup         955.2M     0.0K   955.2M   4096
+/sys/fs/cgroup/memory: Permission denied
+/mnt/asec              955.2M     4.0K   955.2M   4096
+/mnt/obb               955.2M     0.0K   955.2M   4096
+/sys/fs/cgroup         955.2M     0.0K   955.2M   4096
+/sys/fs/cgroup/memory: Permission denied
+/sys/fs/cgroup/freezer: Permission denied
+/system                  1.8G     1.7G   167.0M   4096
+/cache                 248.0M     2.7M   245.3M   4096
+/data                   12.0G     5.7G     6.3G   4096
+/persist                 6.9M    40.0K     6.8M   4096
+/config                  3.9M    60.0K     3.8M   4096
+/factory                 5.8M    44.0K     5.8M   4096
+/sys/fs/cgroup/cpuset: Permission denied
+/mnt/shell/emulated     12.0G     5.7G     6.3G   4096
+=== partitions ===
+major minor  #blocks  name
+
+ 254        0     524288 zram0
+ 179        0   15388672 mmcblk0
+ 179        1       7168 mmcblk0p1
+ 179        2       8192 mmcblk0p2
+ 179        3      10240 mmcblk0p3
+ 179        4       6144 mmcblk0p4
+ 179        5      16384 mmcblk0p5
+ 179        6      16384 mmcblk0p6
+ 179        7      32768 mmcblk0p7
+ 179        8      32768 mmcblk0p8
+ 179        9      32768 mmcblk0p9
+ 179       10      32768 mmcblk0p10
+ 179       11    1966080 mmcblk0p11
+ 179       12     262144 mmcblk0p12
+ 179       13   12962816 mmcblk0p13
+ 179       48       4096 mmcblk0rpmb
+ 179       32       4096 mmcblk0boot1
+ 179       16       4096 mmcblk0boot0
+=== mounts ===
+rootfs / rootfs ro,seclabel,size=961800k,nr_inodes=240450 0 0
+tmpfs /dev tmpfs rw,seclabel,nosuid,relatime,mode=755 0 0
+devpts /dev/pts devpts rw,seclabel,relatime,mode=600 0 0
+proc /proc proc rw,relatime 0 0
+sysfs /sys sysfs rw,seclabel,relatime 0 0
+selinuxfs /sys/fs/selinux selinuxfs rw,relatime 0 0
+binfmt_misc /proc/sys/fs/binfmt_misc binfmt_misc rw,relatime 0 0
+debugfs /sys/kernel/debug debugfs rw,seclabel,relatime 0 0
+none /acct cgroup rw,relatime,cpuacct 0 0
+none /sys/fs/cgroup tmpfs rw,seclabel,relatime,mode=750,gid=1000 0 0
+none /sys/fs/cgroup/memory cgroup rw,relatime,memory 0 0
+tmpfs /mnt/asec tmpfs rw,seclabel,relatime,mode=755,gid=1000 0 0
+tmpfs /mnt/obb tmpfs rw,seclabel,relatime,mode=755,gid=1000 0 0
+none /dev/memcg cgroup rw,relatime,memory 0 0
+none /dev/cpuctl cgroup rw,relatime,cpu 0 0
+pstore /sys/fs/pstore pstore rw,seclabel,relatime 0 0
+none /sys/fs/cgroup tmpfs rw,seclabel,relatime,mode=750,gid=1000 0 0
+none /sys/fs/cgroup/memory cgroup rw,relatime,memory 0 0
+none /sys/fs/cgroup/freezer cgroup rw,relatime,freezer 0 0
+none /sys/firmware/efi/efivars efivarfs rw,relatime 0 0
+/dev/block/by-name/android_system /system ext4 ro,seclabel,relatime,data=ordered 0 0
+/dev/block/by-name/android_cache /cache ext4 rw,seclabel,nosuid,nodev,noatime,errors=panic,data=ordered 0 0
+/dev/block/by-name/android_data /data ext4 rw,seclabel,nosuid,nodev,noatime,discard,noauto_da_alloc,errors=panic,data=ordered 0 0
+/dev/block/by-name/android_persistent /persist ext4 rw,seclabel,nosuid,nodev,noatime,errors=panic 0 0
+/dev/block/by-name/android_config /config ext4 rw,seclabel,nosuid,nodev,noatime,errors=panic,data=ordered 0 0
+/dev/block/by-name/android_factory /factory ext4 rw,seclabel,relatime,data=ordered 0 0
+adb /dev/usb-ffs/adb functionfs rw,relatime 0 0
+none /sys/fs/cgroup/cpuset cgroup rw,relatime,cpuset,clone_children 0 0
+/dev/fuse /mnt/shell/emulated fuse rw,nosuid,nodev,noexec,relatime,user_id=1023,group_id=1023,default_permissions,allow_other 0 0
+=== block ===
+loop0
+loop1
+loop2
+loop3
+loop4
+loop5
+loop6
+loop7
+mmcblk0
+mmcblk0boot0
+mmcblk0boot1
+mmcblk0p1
+mmcblk0p10
+mmcblk0p11
+mmcblk0p12
+mmcblk0p13
+mmcblk0p2
+mmcblk0p3
+mmcblk0p4
+mmcblk0p5
+mmcblk0p6
+mmcblk0p7
+mmcblk0p8
+mmcblk0p9
+mmcblk0rpmb
+ram0
+ram1
+ram10
+ram11
+ram12
+ram13
+ram14
+ram15
+ram2
+ram3
+ram4
+ram5
+ram6
+ram7
+ram8
+ram9
+zram0
+zram1
+zram2
+zram3
+=== mmc ===
+-- /sys/class/block/mmcblk0 size: 30777344
+-- /sys/class/block/mmcblk0boot0 size: 8192
+-- /sys/class/block/mmcblk0boot1 size: 8192
+-- /sys/class/block/mmcblk0p1 size: 14336
+-- /sys/class/block/mmcblk0p10 size: 65536
+-- /sys/class/block/mmcblk0p11 size: 3932160
+-- /sys/class/block/mmcblk0p12 size: 524288
+-- /sys/class/block/mmcblk0p13 size: 25925632
+-- /sys/class/block/mmcblk0p2 size: 16384
+-- /sys/class/block/mmcblk0p3 size: 20480
+-- /sys/class/block/mmcblk0p4 size: 12288
+-- /sys/class/block/mmcblk0p5 size: 32768
+-- /sys/class/block/mmcblk0p6 size: 32768
+-- /sys/class/block/mmcblk0p7 size: 65536
+-- /sys/class/block/mmcblk0p8 size: 65536
+-- /sys/class/block/mmcblk0p9 size: 65536
+-- /sys/class/block/mmcblk0rpmb size: 8192
+mmc0 name: 016G72
+mmc0 type: MMC
+mmc0 hwrev: 0x0
+mmc0 fwrev: 0x0
+mmc0 date: 10/2015
+mmc0 manfid: 0x000011
+mmc0 oemid: 0x0100
+mmc0 serial: 0xe8a32a64

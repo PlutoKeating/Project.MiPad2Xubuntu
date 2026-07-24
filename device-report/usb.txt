@@ -1,0 +1,50 @@
+USB Manager State:
+  USB Device State:
+    Current Functions: mtp,adb
+    Default Functions: mtp,adb
+    mConnected: true
+    mConfigured: true
+    mCurrentAccessory: null
+    Kernel state: CONFIGURED
+    Kernel function list: mtp,ffs
+IOException: java.io.FileNotFoundException: /sys/class/android_usb/android0/f_mass_storage/lun/file: open failed: ENOENT (No such file or directory)
+  USB Debugging State:
+    Connected to adbd: true
+    Last key received: REDACTED
+    User keys:
+REDACTED_ADB_KEY
+
+    System keys:
+IOException: java.io.FileNotFoundException: /adb_keys: open failed: ENOENT (No such file or directory)
+  USB Host State:
+  USB AudioDevices:
+  Settings for user 0:
+    Device permissions:
+    Accessory permissions:
+    Device preferences:
+    Accessory preferences:
+=== android_usb ===
+bDeviceClass
+bDeviceProtocol
+bDeviceSubClass
+bcdDevice
+enable
+f_accessory
+f_acm
+f_audio_source
+f_ffs
+f_mass_storage
+f_mtp
+f_ptp
+f_rndis
+functions
+iManufacturer
+iProduct
+iSerial
+idProduct
+idVendor
+power
+state
+uevent
+mtp,ffs
+CONFIGURED

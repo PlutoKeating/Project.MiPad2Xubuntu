@@ -1,0 +1,47 @@
+MemTotal:        1956160 kB
+MemFree:          112684 kB
+MemAvailable:     380660 kB
+Buffers:           33032 kB
+Cached:           689508 kB
+SwapCached:        15588 kB
+Active:           930812 kB
+Inactive:         567076 kB
+Active(anon):     767988 kB
+Inactive(anon):   403228 kB
+Active(file):     162824 kB
+Inactive(file):   163848 kB
+Unevictable:           4 kB
+Mlocked:              12 kB
+SwapTotal:        524284 kB
+SwapFree:         404260 kB
+Dirty:                32 kB
+Writeback:             0 kB
+AnonPages:        770200 kB
+Mapped:           164060 kB
+Shmem:            395864 kB
+Slab:             113452 kB
+SReclaimable:      56336 kB
+SUnreclaim:        57116 kB
+KernelStack:        8904 kB
+PageTables:        22000 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     1502364 kB
+Committed_AS:   25951952 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      439168 kB
+VmallocChunk:   34359141892 kB
+DirectMap4k:       12104 kB
+DirectMap2M:     1996800 kB
+=== swaps ===
+Filename				Type		Size	Used	Priority
+/dev/block/zram0                        partition	524284	120024	-1
+=== zram ===
+/sys/class/block/zram0/disksize: 536870912
+/sys/class/block/zram0/compr_data_size: 19254493
+/sys/class/block/zram0/orig_data_size: 75964416
+/sys/class/block/zram0/mem_used_total: 24711168
+/sys/class/block/zram0/max_comp_streams: (n/a)
+/sys/class/block/zram0/comp_algorithm: (n/a)
+/sys/class/block/zram0/initstate: 1

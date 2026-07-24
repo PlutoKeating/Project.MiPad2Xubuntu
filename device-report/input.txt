@@ -1,0 +1,73 @@
+I: Bus=0019 Vendor=0000 Product=0001 Version=0000
+N: Name="Power Button"
+P: Phys=PNP0C0C/button/input0
+S: Sysfs=/devices/LNXSYSTM:00/device:00/PNP0C0C:00/input/input0
+U: Uniq=
+H: Handlers=event0 keychord 
+B: PROP=0
+B: EV=3
+B: KEY=10000000000000 0
+
+I: Bus=0019 Vendor=0000 Product=0001 Version=0000
+N: Name="Power Button"
+P: Phys=LNXPWRBN/button/input0
+S: Sysfs=/devices/LNXSYSTM:00/LNXPWRBN:00/input/input1
+U: Uniq=
+H: Handlers=event1 keychord 
+B: PROP=0
+B: EV=3
+B: KEY=10000000000000 0
+
+I: Bus=0019 Vendor=0000 Product=0006 Version=0000
+N: Name="Video Bus"
+P: Phys=LNXVIDEO/video/input0
+S: Sysfs=/devices/LNXSYSTM:00/device:00/PNP0A08:00/LNXVIDEO:00/input/input2
+U: Uniq=
+H: Handlers=event2 
+B: PROP=0
+B: EV=3
+B: KEY=3e000b00000000 0 0 0
+
+I: Bus=0018 Vendor=4654 Product=5000 Version=0100
+N: Name="ft5x46"
+P: Phys=/devices/pci0000:00/808622C1:05/i2c-5/i2c-FTSC0001:00/input/input3
+S: Sysfs=/devices/pci0000:00/808622C1:05/i2c-5/i2c-FTSC0001:00/input/input3
+U: Uniq=
+H: Handlers=event3 
+B: PROP=2
+B: EV=b
+B: KEY=400 0 8 40008800 4000000000 0
+B: ABS=265800000000000
+
+I: Bus=0019 Vendor=0001 Product=0001 Version=0100
+N: Name="gpio-keys"
+P: Phys=gpio-keys/input0
+S: Sysfs=/devices/platform/gpio-keys.4.auto/input/input4
+U: Uniq=
+H: Handlers=event4 keychord 
+B: PROP=0
+B: EV=23
+B: KEY=100000000000 10000002000000 0
+B: SW=1
+
+I: Bus=0019 Vendor=0001 Product=0001 Version=0100
+N: Name="gpio-keys"
+P: Phys=gpio-keys/input0
+S: Sysfs=/devices/platform/gpio-keys.5.auto/input/input5
+U: Uniq=
+H: Handlers=event5 keychord 
+B: PROP=0
+B: EV=100003
+B: KEY=c000000000000 0
+
+I: Bus=0000 Vendor=0000 Product=0000 Version=0000
+N: Name="cherrytrailaud Intel MID Audio Jack"
+P: Phys=ALSA
+S: Sysfs=/devices/platform/cht_rt5659/sound/card0/input6
+U: Uniq=
+H: Handlers=event6 
+B: PROP=0
+B: EV=23
+B: KEY=6 400000000 0 0 0
+B: SW=14
+

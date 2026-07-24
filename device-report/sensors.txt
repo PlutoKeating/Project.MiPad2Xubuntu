@@ -1,0 +1,120 @@
+Sensor List:
+Lift sensor    | INTEL     | version=1 |intel.sensor.lift   | 0x00000001 | "" | type=65549 | special-trigger | maxDelay=0us |minDelay=0us |FifoMax=6826 events | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Pan Zoom sensor| INTEL     | version=1 |intel.sensor.pan_zoom| 0x00000002 | "" | type=65550 | continuous | minRate=0.00Hz | maxRate=100.00Hz | FifoMax=5309 events | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Step counter sensor| INTEL     | version=1 |android.sensor.step_counter| 0x00000003 | "" | type=19 | on-change | maxDelay=0us |minDelay=0us |FifoMax=3982 events | non-wakeUp | last=<0, 0>
+
+Game rotation vector sensor| INTEL     | version=1 |android.sensor.game_rotation_vector| 0x00000004 | "" | type=15 | continuous | minRate=0.00Hz | maxRate=100.00Hz | FifoMax=5309 events | non-wakeUp | last=<  0.0,  0.0,  0.0,  0.0, 0>
+
+Gesture flick sensor| INTEL     | version=1 |intel.sensor.gesture_flick| 0x00000005 | "" | type=65537 | special-trigger | maxDelay=0us |minDelay=0us |FifoMax=7168 events | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Instant Activity sensor| INTEL     | version=1 |intel.sensor.instant_activity| 0x00000006 | "" | type=65539 | special-trigger | maxDelay=0us |minDelay=0us |FifoMax=7168 events | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Terminal sensor| INTEL     | version=1 |intel.sensor.terminal| 0x00000007 | "" | type=65540 | on-change | maxDelay=0us |minDelay=0us |FifoMax=7168 events | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Tilt Detector sensor (wakeup)| INTEL     | version=1 |android.sensor.tilt_detector| 0x00000008 | "" | type=22 | special-trigger | maxDelay=0us |minDelay=0us |FifoMax=7168 events | wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Significant motion sensor (wakeup)| INTEL     | version=1 |android.sensor.significant_motion| 0x00000009 | "" | type=17 | one-shot | maxDelay=0us |minDelay=-1us |no batching | wakeUp | last=<0.000000 0>
+
+Tap sensor (wakeup)| INTEL     | version=1 |intel.sensor.simple_tapping| 0x0000000a | "" | type=65544 | special-trigger | maxDelay=0us |minDelay=0us |FifoMax=7168 events | wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Light sensor   | CAPELLA   | version=1 |android.sensor.light| 0x0000000b | "" | type=5 | on-change | maxDelay=0us |minDelay=0us |FifoMax=6826 events | non-wakeUp | last=< 37.7,  0.0,  0.0, 53569844618000>
+
+Uncalibrated Accelerometer sensor| ST_MICRO  | version=1 |intel.sensor.accelerometer_uncalibrated| 0x0000000c | "" | type=65551 | continuous | minRate=0.00Hz | maxRate=100.00Hz | FifoMax=4624 events | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Accelerometer sensor| INTEL     | version=1 |android.sensor.accelerometer| 0x0000000d | "" | type=1 | continuous | minRate=0.00Hz | maxRate=100.00Hz | FifoMax=4778 events | non-wakeUp | last=<  0.1,  0.1,  9.9, 54153408801000>
+
+Magnetometer sensor| AKM       | version=1 |android.sensor.magnetic_field| 0x0000000e | "" | type=2 | continuous | minRate=0.00Hz | maxRate=100.00Hz | FifoMax=4480 events | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Calibrated Accelerometer Sensor| INTEL     | version=1 |android.sensor.OEM0 | 0x0000000f | "" | type=65636 | special-trigger | maxDelay=0us |minDelay=0us |FifoMax=1769 events | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Gyroscope sensor| INTEL     | version=1 |android.sensor.gyroscope| 0x00000010 | "" | type=4 | continuous | minRate=0.00Hz | maxRate=100.00Hz | FifoMax=4943 events | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Compass Sensor | INTEL     | version=1 |android.sensor.OEM1 | 0x00000011 | "" | type=65637 | special-trigger | maxDelay=0us |minDelay=0us |FifoMax=1769 events | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Move detector sensor| INTEL     | version=1 |intel.sensor.move_detect| 0x00000012 | "" | type=65545 | on-change | maxDelay=0us |minDelay=0us |FifoMax=7168 events | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Gravity sensor | INTEL     | version=1 |android.sensor.gravity| 0x00000013 | "" | type=9 | continuous | minRate=0.00Hz | maxRate=100.00Hz | FifoMax=4624 events | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Orientation sensor| INTEL     | version=1 |android.sensor.orientation| 0x00000014 | "" | type=3 | continuous | minRate=0.00Hz | maxRate=100.00Hz | FifoMax=4624 events | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Linear Acceleration sensor| INTEL     | version=1 |android.sensor.linear_acceleration| 0x00000015 | "" | type=10 | continuous | minRate=0.00Hz | maxRate=100.00Hz | FifoMax=4624 events | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Rotation vector sensor| INTEL     | version=1 |android.sensor.rotation_vector| 0x00000016 | "" | type=11 | continuous | minRate=0.00Hz | maxRate=100.00Hz | FifoMax=5309 events | non-wakeUp | last=<  0.0,  0.0,  0.0,  0.0,  0.0, 0>
+
+Pick up gesture sensor (wakeup)| INTEL     | version=1 |intel.sensor.pick_up| 0x00000017 | "" | type=65555 | special-trigger | maxDelay=0us |minDelay=0us |FifoMax=7168 events | wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Shake sensor   | INTEL     | version=1 |intel.sensor.shake  | 0x00000018 | "" | type=65543 | special-trigger | maxDelay=0us |minDelay=0us |FifoMax=7168 events | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Step detector sensor| INTEL     | version=1 |android.sensor.step_detector| 0x00000019 | "" | type=18 | special-trigger | maxDelay=0us |minDelay=0us |FifoMax=3982 events | non-wakeUp | last=<0.000000 0>
+
+Uncalibrated Gyroscope sensor| INTEL     | version=1 |android.sensor.gyroscope_uncalibrated| 0x0000001a | "" | type=16 | continuous | minRate=0.00Hz | maxRate=100.00Hz | FifoMax=3333 events | non-wakeUp | last=<  0.0,  0.0,  0.0,  0.0,  0.0,  0.0, 0>
+
+Uncalibrated Magnetometer sensor| INTEL     | version=1 |android.sensor.magnetic_field_uncalibrated| 0x0000001b | "" | type=14 | continuous | minRate=0.00Hz | maxRate=100.00Hz | FifoMax=3333 events | non-wakeUp | last=<  0.0,  0.0,  0.0,  0.0,  0.0,  0.0, 0>
+
+Rotation Vector Sensor| AOSP      | version=3 |android.sensor.rotation_vector| 0x5f726f76 | "" | type=11 | continuous | maxDelay=0us |maxRate=100.00Hz | no batching | non-wakeUp | last=<  0.0,  0.0,  0.0,  0.0,  0.0, 0>
+
+Gravity Sensor | AOSP      | version=3 |android.sensor.gravity| 0x5f677276 | "" | type=9 | continuous | maxDelay=0us |maxRate=100.00Hz | no batching | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Linear Acceleration Sensor| AOSP      | version=3 |android.sensor.linear_acceleration| 0x5f6c696e | "" | type=10 | continuous | maxDelay=0us |maxRate=100.00Hz | no batching | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Orientation Sensor| AOSP      | version=1 |android.sensor.orientation| 0x5f797072 | "" | type=3 | continuous | maxDelay=0us |maxRate=100.00Hz | no batching | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Corrected Gyroscope Sensor| AOSP      | version=1 |android.sensor.gyroscope| 0x5f636779 | "" | type=4 | continuous | maxDelay=0us |maxRate=100.00Hz | no batching | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+Gyroscope Bias (debug)| AOSP      | version=1 |android.sensor.accelerometer| 0x5f676273 | "" | type=1 | continuous | maxDelay=0us |maxRate=100.00Hz | no batching | non-wakeUp | last=<  0.0,  0.0,  0.0, 0>
+
+9-axis fusion disabled (0 clients), gyro-rate= 200.00Hz, q=< 0, 0, 0, 0 > (0), b=< 0, 0, 0 >
+halVersion 16973825
+27 h/w sensors:
+handle=0x00000001, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000001, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000002, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000002, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000003, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000003, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000004, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000004, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000005, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000005, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000006, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000006, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000007, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000007, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000008, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000008, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000009, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000009, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x0000000a, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x0000000a, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x0000000b, active-count=1, batch_period(ms)={ 250.0 }, selected=250.0 ms
+handle=0x0000000b, active-count=1, batch_timeout(ms)={  0.0 }, selected= 0.0 ms
+handle=0x0000000c, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x0000000c, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x0000000d, active-count=1, batch_period(ms)={ 66.7 }, selected=66.7 ms
+handle=0x0000000d, active-count=1, batch_timeout(ms)={  0.0 }, selected= 0.0 ms
+handle=0x0000000e, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x0000000e, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x0000000f, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x0000000f, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000010, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000010, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000011, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000011, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000012, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000012, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000013, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000013, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000014, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000014, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000015, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000015, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000016, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000016, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000017, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000017, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000018, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000018, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms
+handle=0x00000019, active-count=0, batch_period(ms)={  }, selected=-0.0 ms
+handle=0x00000019, active-count=0, batch_timeout(ms)={  }, selected=-0.0 ms

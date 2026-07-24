@@ -1,0 +1,21 @@
+-- /sys/class/thermal/thermal_zone0 --
+/system/bin/sh: cat: /sys/class/thermal/thermal_zone0/type: Permission denied
+/system/bin/sh: cat: /sys/class/thermal/thermal_zone0/temp: Permission denied
+-- /sys/class/thermal/thermal_zone1 --
+/system/bin/sh: cat: /sys/class/thermal/thermal_zone1/type: Permission denied
+/system/bin/sh: cat: /sys/class/thermal/thermal_zone1/temp: Permission denied
+-- /sys/class/thermal/thermal_zone2 --
+/system/bin/sh: cat: /sys/class/thermal/thermal_zone2/type: Permission denied
+/system/bin/sh: cat: /sys/class/thermal/thermal_zone2/temp: Permission denied
+-- /sys/class/thermal/thermal_zone3 --
+/system/bin/sh: cat: /sys/class/thermal/thermal_zone3/type: Permission denied
+/system/bin/sh: cat: /sys/class/thermal/thermal_zone3/temp: Permission denied
+-- /sys/class/thermal/thermal_zone4 --
+/system/bin/sh: cat: /sys/class/thermal/thermal_zone4/type: Permission denied
+/system/bin/sh: cat: /sys/class/thermal/thermal_zone4/temp: Permission denied
+-- /sys/class/thermal/thermal_zone5 --
+/system/bin/sh: cat: /sys/class/thermal/thermal_zone5/type: Permission denied
+/system/bin/sh: cat: /sys/class/thermal/thermal_zone5/temp: Permission denied
+-- /sys/class/thermal/thermal_zone6 --
+/system/bin/sh: cat: /sys/class/thermal/thermal_zone6/type: Permission denied
+/system/bin/sh: cat: /sys/class/thermal/thermal_zone6/temp: Permission denied

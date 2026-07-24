@@ -1,0 +1,71 @@
+=== uptime ===
+54174.81 70011.32
+=== loadavg ===
+1.35 1.44 1.46 2/1114 7192
+=== top ===
+
+
+
+User 2%, System 26%, IOW 0%, IRQ 0%
+User 30 + Nice 0 + Sys 318 + Idle 852 + IOW 4 + IRQ 7 + SIRQ 1 = 1212
+
+  PID PR CPU% S  #THR     VSS     RSS PCY UID      Name
+ 5408  3  24% Z     2      0K      0K  fg bluetoot droid.bluetooth
+ 2269  2   0% S     9  29380K   5940K  fg logd     /system/bin/logd
+ 4908  0   0% S   119 2067436K 312756K  bg u0_a95   com.mubu.app
+ 7193  0   0% R     1  12252K   1596K  fg shell    top
+ 2274  0   0% S    16 110108K  12168K  fg system   /system/bin/surfaceflinger
+ 2415  0   0% S     2  11156K    568K  fg root     /system/bin/sensorhubd
+ 1389  0   0% S     1      0K      0K  fg root     mmcqd/0
+  939  2   0% S     1      0K      0K  fg root     kswapd0
+18670  2   0% S    32 1342992K  72340K  fg u0_a11   com.miui.home
+    7  0   0% S     1      0K      0K  fg root     rcu_preempt
+   15  2   0% S     1      0K      0K  fg root     migration/2
+   16  2   0% S     1      0K      0K  fg root     ksoftirqd/2
+   18  2   0% S     1      0K      0K  fg root     kworker/2:0H
+   19  3   0% S     1      0K      0K  fg root     migration/3
+   20  3   0% S     1      0K      0K  fg root     ksoftirqd/3
+   22  3   0% S     1      0K      0K  fg root     kworker/3:0H
+   23  1   0% S     1      0K      0K  fg root     khelper
+   24  0   0% S     1      0K      0K  fg root     kdevtmpfs
+=== meminfo summary ===
+Applications Memory Usage (kB):
+Uptime: 22013858 Realtime: 54177997
+
+Total PSS SWAP by process:
+   301483 kB:    5264 kB: com.mubu.app (pid 4908 / activities)
+    85749 kB:    8688 kB: system (pid 18110)
+    76583 kB:   12048 kB: com.android.systemui (pid 18264)
+    72220 kB:    7328 kB: com.xiaomi.market (pid 4514 / activities)
+    42914 kB:    7312 kB: com.android.settings (pid 19932 / activities)
+    34808 kB:   17716 kB: com.miui.home (pid 18670 / activities)
+    30268 kB:    7416 kB: com.google.android.inputmethod.pinyin (pid 18411)
+    21508 kB:    6648 kB: com.miui.systemAdSolution (pid 21454)
+    20067 kB:    6544 kB: com.android.quicksearchbox (pid 6525)
+    19809 kB:    7540 kB: com.miui.gallery (pid 6307)
+    18081 kB:    8352 kB: com.miui.analytics (pid 18885)
+    17936 kB:    7492 kB: android.process.media (pid 6455)
+    15110 kB:    8580 kB: com.xiaomi.xmsf (pid 18351)
+    14378 kB:    7408 kB: com.miui.touchassistant:float (pid 5351)
+    11964 kB:    7544 kB: com.android.settings:remote (pid 6362)
+    11818 kB:    9064 kB: com.miui.whetstone (pid 18328)
+    11105 kB:   30816 kB: mediaserver (pid 17853)
+    10729 kB:    8288 kB: com.miui.daemon (pid 18581)
+    10073 kB:    9800 kB: com.miui.powerkeeper (pid 19053)
+     9953 kB:    7588 kB: com.miui.weather2 (pid 6656)
+     9159 kB:    7580 kB: com.xiaomi.account (pid 6556)
+     8960 kB:    7588 kB: android.process.acore (pid 6508)
+     8920 kB:   10164 kB: com.xiaomi.metoknlp (pid 18521)
+     7784 kB:   10800 kB: com.xiaomi.finddevice (pid 18590)
+     7515 kB:   10968 kB: com.android.phone (pid 18611)
+     7406 kB:    8264 kB: surfaceflinger (pid 2274)
+     5923 kB:     468 kB: logd (pid 2269)
+     5458 kB:    7548 kB: com.xiaomi.bluetooth (pid 5627)
+     5412 kB:    7288 kB: com.miui.core (pid 5964)
+     4539 kB:    7604 kB: com.miui.wmsvc (pid 20310)
+     3687 kB:    7612 kB: com.intel.widi.uibc (pid 6186)
+     3341 kB:     180 kB: sdcard (pid 2426)
+     3244 kB:    6944 kB: zygote (pid 2417)
+     2997 kB:    8584 kB: com.intel.thermal (pid 18563)
+     2647 kB:    7772 kB: zygote64 (pid 17850)
+     2464 kB:    8412 kB: com.android.smspush (pid 19153)

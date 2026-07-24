@@ -1,0 +1,137 @@
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN 
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: sit0@NONE: <NOARP> mtu 1480 qdisc noop state DOWN 
+    link/sit 0.0.0.0 brd 0.0.0.0
+3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
+    link/ether REDACTED brd ff:ff:ff:ff:ff:ff
+    inet 192.168.x.x/24 brd 192.168.1.255 scope global wlan0
+       valid_lft forever preferred_lft forever
+    inet6 REDACTED/64 scope global temporary dynamic 
+       valid_lft 259119sec preferred_lft 75947sec
+    inet6 REDACTED/64 scope global dynamic 
+       valid_lft 259119sec preferred_lft 172719sec
+    inet6 REDACTED/64 scope link 
+       valid_lft forever preferred_lft forever
+=== route ===
+192.168.x.0/24 dev wlan0  proto kernel  scope link  src 192.168.x.x 
+=== wifi ===
+Wi-Fi is enabled
+Stay-awake conditions: 3
+mMulticastEnabled 0
+mMulticastDisabled 0
+WifiController:
+ total records=2884
+ rec[0]: time=07-21 00:30:01.725 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[1]: time=07-21 00:30:31.835 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[2]: time=07-21 00:31:01.890 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[3]: time=07-21 00:31:31.953 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[4]: time=07-21 00:31:32.098 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[5]: time=07-21 00:32:02.046 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[6]: time=07-21 00:32:32.134 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[7]: time=07-21 00:33:02.203 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[8]: time=07-21 00:33:32.251 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[9]: time=07-21 00:34:02.352 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[10]: time=07-21 00:34:32.411 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[11]: time=07-21 00:35:02.796 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[12]: time=07-21 00:35:32.573 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[13]: time=07-21 00:36:02.695 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[14]: time=07-21 00:36:32.775 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[15]: time=07-21 00:37:02.834 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[16]: time=07-21 00:37:02.983 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[17]: time=07-21 00:37:32.897 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[18]: time=07-21 00:38:03.011 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[19]: time=07-21 00:38:33.081 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[20]: time=07-21 00:39:03.158 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[21]: time=07-21 00:39:33.241 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[22]: time=07-21 00:40:03.297 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[23]: time=07-21 00:40:33.701 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[24]: time=07-21 00:41:03.459 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[25]: time=07-21 00:41:33.539 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[26]: time=07-21 00:42:03.627 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[27]: time=07-21 00:42:33.727 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[28]: time=07-21 00:42:33.848 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[29]: time=07-21 00:43:03.808 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[30]: time=07-21 00:43:33.887 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[31]: time=07-21 00:44:03.956 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[32]: time=07-21 00:44:34.016 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[33]: time=07-21 00:44:34.158 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[34]: time=07-21 00:45:04.147 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[35]: time=07-21 00:45:34.170 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[36]: time=07-21 00:46:04.406 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[37]: time=07-21 00:46:34.366 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[38]: time=07-21 00:47:04.444 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[39]: time=07-21 00:47:34.512 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[40]: time=07-21 00:48:04.598 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[41]: time=07-21 00:48:34.689 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[42]: time=07-21 00:49:04.767 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[43]: time=07-21 00:49:34.832 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[44]: time=07-21 00:50:04.906 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[45]: time=07-21 00:50:05.045 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[46]: time=07-21 00:50:34.999 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[47]: time=07-21 00:51:05.080 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[48]: time=07-21 00:51:35.175 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[49]: time=07-21 00:52:05.237 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[50]: time=07-21 00:52:05.354 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[51]: time=07-21 00:52:35.322 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[52]: time=07-21 00:53:05.403 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[53]: time=07-21 00:53:35.480 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[54]: time=07-21 00:54:05.679 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[55]: time=07-21 00:54:35.649 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[56]: time=07-21 00:55:05.721 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[57]: time=07-21 00:55:35.769 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[58]: time=07-21 00:56:05.891 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[59]: time=07-21 00:56:06.000 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[60]: time=07-21 00:56:35.950 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[61]: time=07-21 00:57:05.993 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[62]: time=07-21 00:57:36.120 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[63]: time=07-21 00:58:06.202 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[64]: time=07-21 00:58:06.313 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[65]: time=07-21 00:59:36.444 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[66]: time=07-21 01:00:06.494 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[67]: time=07-21 01:00:36.570 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[68]: time=07-21 01:01:06.685 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[69]: time=07-21 01:01:36.748 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[70]: time=07-21 01:02:06.818 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[71]: time=07-21 01:02:36.904 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[72]: time=07-21 01:03:07.253 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+ rec[73]: time=07-21 01:03:37.043 processed=DefaultState org=DeviceActiveState dest=<null> what=155652(0x26004)
+=== bluetooth_manager ===
+enabled: true
+state: 10
+address: 00:00:00:00:32:0F
+name: imin-bluetooth
+Bluetooth Service not connected
+[dhcp.wlan0.dns1]: [192.168.1.1]
+[dhcp.wlan0.dns2]: []
+[dhcp.wlan0.dns3]: []
+[dhcp.wlan0.dns4]: []
+[dhcp.wlan0.domain]: []
+[dhcp.wlan0.gateway]: [192.168.1.1]
+[dhcp.wlan0.ipaddress]: [192.168.x.x]
+[dhcp.wlan0.leasetime]: [7200]
+[dhcp.wlan0.mask]: [255.255.255.0]
+[dhcp.wlan0.mtu]: []
+[dhcp.wlan0.pid]: [31236]
+[dhcp.wlan0.reason]: [RENEW]
+[dhcp.wlan0.result]: [ok]
+[dhcp.wlan0.server]: [192.168.1.1]
+[dhcp.wlan0.vendorInfo]: []
+[init.svc.dhcpcd_wlan0]: [running]
+[init.svc.iprenew_wlan0]: [stopped]
+[init.svc.rfkill_bt]: [stopped]
+[init.svc.wlan_prov]: [stopped]
+[net.bt.name]: [Android]
+[persist.sys.labtest_flag]: [false]
+[ro.bt.bdaddr_path]: [/config/bt/bd_addr.conf]
+[ro.btconfig.chip]: [BCM4356]
+[ro.btconfig.dev]: [/dev/ttyHSU0]
+[ro.btconfig.if]: [uart]
+[ro.btconfig.vendor]: [broadcom]
+[ro.wifi.channels]: []
+[ro.wlan.mimo]: [1]
+[wifi.interface]: [wlan0]
+[wlan.driver.status]: [ok]
