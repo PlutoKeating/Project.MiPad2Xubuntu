@@ -20,6 +20,9 @@ flash-kit/backup/
 *.ko.zst
 *.ko
 
+# === Skill installations ===
+.kimi/
+
 # === Temporary / build artifacts ===
 *.o
 *.mod
