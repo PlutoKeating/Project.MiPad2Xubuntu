@@ -96,6 +96,11 @@ if (dmi_match(DMI_PRODUCT_NAME, "Mipad2") && adev) {
 
 ---
 
+> [!IMPORTANT]
+> **学习与研究用途声明：** 本项目以学习、互操作性研究和经授权的设备实验为目的发布。它不构成对任何设备进行访问、绕过保护或刷写操作的授权，也不提供适销性、特定用途适用性、数据安全或硬件可恢复性的保证。你只能在自己拥有或已获得明确授权的设备上操作，并须遵守所在地法律和第三方权利。Xiaomi、Intel、Canonical、Debian 及其他上游项目不为本项目背书。
+
+---
+
 ## 许可
 
 本项目基于 [GNU Affero General Public License v3.0](LICENCE) 发布。
