@@ -1,0 +1,12 @@
+[Unit]
+Description=Codex graphical and network recovery
+After=NetworkManager.service systemd-user-sessions.service
+Wants=NetworkManager.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/codex-graphical-recovery
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

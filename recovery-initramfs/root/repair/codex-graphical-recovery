@@ -1,0 +1,39 @@
+#!/bin/sh
+
+TAG='[DEBUG-codex-display]'
+LOG=/var/log/codex-graphical-recovery.log
+
+exec >>"$LOG" 2>&1
+echo "$TAG recovery service started"
+
+modprobe brcmfmac || true
+sleep 3
+
+if command -v nmcli >/dev/null 2>&1; then
+	nmcli radio wifi on || true
+	nmcli -t -f UUID,TYPE connection show | while IFS=: read -r uuid type; do
+		case "$type" in
+			wifi|802-11-wireless)
+				echo "$TAG trying saved Wi-Fi connection $uuid"
+				nmcli --wait 20 connection up uuid "$uuid" && break
+				;;
+		esac
+	done
+fi
+
+systemctl unmask display-manager.service lightdm.service 2>/dev/null || true
+systemctl --no-block restart display-manager.service || systemctl --no-block restart lightdm.service || true
+sleep 12
+
+{
+	echo
+	echo "$TAG display-manager state: $(systemctl is-active display-manager.service 2>/dev/null || true)"
+	echo "$TAG graphical target state: $(systemctl is-active graphical.target 2>/dev/null || true)"
+	echo "$TAG network addresses:"
+	ip -4 -brief address 2>/dev/null || true
+	echo "$TAG display-manager status follows:"
+	systemctl --no-pager --full status display-manager.service 2>&1 || true
+} >/dev/tty1
+
+chvt 7 2>/dev/null || true
+echo "$TAG recovery service finished"

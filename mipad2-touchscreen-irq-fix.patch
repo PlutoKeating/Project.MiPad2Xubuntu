@@ -1,0 +1,45 @@
+diff --git a/drivers/i2c/i2c-core-acpi.c b/drivers/i2c/i2c-core-acpi.c
+index d2499f302..318e76f07 100644
+--- a/drivers/i2c/i2c-core-acpi.c
++++ b/drivers/i2c/i2c-core-acpi.c
+@@ -7,7 +7,10 @@
+ 
+ #include <linux/acpi.h>
+ #include <linux/device.h>
++#include <linux/dmi.h>
+ #include <linux/err.h>
++#include <linux/gpio/consumer.h>
++#include <linux/gpio.h>
+ #include <linux/i2c.h>
+ #include <linux/list.h>
+ #include <linux/module.h>
+@@ -220,6 +223,29 @@ int i2c_acpi_get_irq(struct i2c_client *client, bool *wake_capable)
+ 	if (irq_ctx.irq == -ENOENT)
+ 		irq_ctx.irq = acpi_dev_gpio_irq_wake_get(adev, 0, &irq_ctx.wake_capable);
+ 
++	if (irq_ctx.irq < 0)
++	{
++		/*
++		 * Xiaomi Mi Pad 2 (latte): the DSDT _CRS of the touchscreen
++		 * (FTSC0001/ATML1000) declares three GPIOs, and the ACPI GPIO
++		 * walk aborts on the first unusable one, so the real IRQ on
++		 * INT33FF:03 / GPO3 pin 0x4D (gpio 787) is never reached.
++		 * Fall back to that GPIO when the normal lookup fails.
++		 */
++		if (dmi_match(DMI_PRODUCT_NAME, "Mipad2")) {
++			struct gpio_desc *desc = gpio_to_desc(787);
++
++			if (!IS_ERR(desc)) {
++				int irq = gpiod_to_irq(desc);
++
++				if (irq > 0) {
++					irq_ctx.irq = irq;
++					irq_ctx.wake_capable = false;
++				}
++			}
++		}
++	}
++
+ 	if (irq_ctx.irq < 0)
+ 		return irq_ctx.irq;
+ 

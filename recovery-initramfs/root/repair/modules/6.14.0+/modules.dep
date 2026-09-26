@@ -1,0 +1,33 @@
+kernel/kernel/configs.ko.zst:
+kernel/fs/nls/nls_cp437.ko.zst:
+kernel/fs/nls/nls_ascii.ko.zst:
+kernel/fs/nls/nls_utf8.ko.zst:
+kernel/drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko.zst:
+kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.zst: kernel/drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko.zst
+kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/wcc/brcmfmac-wcc.ko.zst: kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.zst kernel/drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko.zst
+kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/cyw/brcmfmac-cyw.ko.zst: kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.zst kernel/drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko.zst
+kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/bca/brcmfmac-bca.ko.zst: kernel/drivers/net/wireless/broadcom/brcm80211/brcmfmac/brcmfmac.ko.zst kernel/drivers/net/wireless/broadcom/brcm80211/brcmutil/brcmutil.ko.zst
+kernel/drivers/net/veth.ko.zst:
+kernel/drivers/media/i2c/ov5693.ko.zst: kernel/drivers/media/v4l2-core/v4l2-cci.ko.zst
+kernel/drivers/media/v4l2-core/v4l2-cci.ko.zst:
+kernel/drivers/bluetooth/hci_uart.ko.zst: kernel/drivers/bluetooth/btrtl.ko.zst kernel/drivers/bluetooth/btbcm.ko.zst
+kernel/drivers/bluetooth/btbcm.ko.zst:
+kernel/drivers/bluetooth/btrtl.ko.zst:
+kernel/drivers/staging/media/atomisp/atomisp.ko.zst: kernel/drivers/staging/media/atomisp/pci/atomisp_gmin_platform.ko.zst
+kernel/drivers/staging/media/atomisp/pci/atomisp_gmin_platform.ko.zst:
+kernel/sound/soc/codecs/snd-soc-rl6231.ko.zst:
+kernel/sound/soc/codecs/snd-soc-rt5659.ko.zst: kernel/sound/soc/codecs/snd-soc-rl6231.ko.zst
+kernel/sound/soc/intel/common/snd-soc-acpi-intel-match.ko.zst: kernel/sound/soc/snd-soc-acpi.ko.zst kernel/sound/soc/intel/common/snd-soc-acpi-intel-sdca-quirks.ko.zst kernel/sound/soc/sdca/snd-soc-sdca.ko.zst
+kernel/sound/soc/intel/common/snd-soc-acpi-intel-sdca-quirks.ko.zst: kernel/sound/soc/sdca/snd-soc-sdca.ko.zst
+kernel/sound/soc/intel/boards/snd-soc-sst-cht-bsw-rt5659.ko.zst:
+kernel/sound/soc/intel/atom/snd-soc-sst-atom-hifi2-platform.ko.zst:
+kernel/sound/soc/intel/atom/sst/snd-intel-sst-core.ko.zst: kernel/sound/soc/intel/atom/snd-soc-sst-atom-hifi2-platform.ko.zst
+kernel/sound/soc/intel/atom/sst/snd-intel-sst-acpi.ko.zst: kernel/sound/hda/snd-intel-dspcfg.ko.zst kernel/sound/soc/intel/atom/sst/snd-intel-sst-core.ko.zst kernel/sound/soc/intel/atom/snd-soc-sst-atom-hifi2-platform.ko.zst kernel/sound/soc/intel/common/snd-soc-acpi-intel-match.ko.zst kernel/sound/soc/snd-soc-acpi.ko.zst kernel/sound/soc/intel/common/snd-soc-acpi-intel-sdca-quirks.ko.zst kernel/sound/soc/sdca/snd-soc-sdca.ko.zst
+kernel/sound/soc/sdca/snd-soc-sdca.ko.zst:
+kernel/sound/soc/snd-soc-acpi.ko.zst:
+kernel/sound/hda/snd-intel-dspcfg.ko.zst:
+kernel/sound/hda/snd-intel-sdw-acpi.ko.zst:
+kernel/net/netfilter/xt_nat.ko.zst:
+kernel/net/netfilter/xt_MASQUERADE.ko.zst:
+kernel/net/ipv6/netfilter/ip6_tables.ko.zst:
+kernel/net/ipv6/netfilter/ip6table_nat.ko.zst: kernel/net/ipv6/netfilter/ip6_tables.ko.zst

@@ -1,0 +1,104 @@
+#!/bin/busybox sh
+
+BB=/bin/busybox
+ROOT=/newroot
+LOG="$ROOT/var/log/codex-boot-repair.log"
+
+$BB mount -t devtmpfs devtmpfs /dev
+$BB mount -t proc proc /proc
+$BB mount -t sysfs sysfs /sys
+
+mounted=0
+attempt=0
+while [ "$attempt" -lt 20 ]; do
+	attempt=$((attempt + 1))
+	if $BB mount -t ext4 -o rw /dev/mmcblk0p13 "$ROOT"; then
+		mounted=1
+		break
+	fi
+	$BB sleep 1
+done
+
+if [ "$mounted" -ne 1 ]; then
+	echo "[codex-repair] Cannot mount /dev/mmcblk0p13; opening rescue shell"
+	exec $BB sh
+fi
+
+$BB mkdir -p "$ROOT/var/log" "$ROOT/etc/systemd/system"
+{
+	echo "[codex-repair] Repair started"
+	echo "[codex-repair] Kernel command line: $($BB cat /proc/cmdline)"
+} > "$LOG"
+
+FSTAB="$ROOT/etc/fstab"
+FSTAB_BACKUP="$ROOT/etc/fstab.codex-backup-20260805"
+if [ -f "$FSTAB" ]; then
+	if [ ! -f "$FSTAB_BACKUP" ]; then
+		$BB cp -p "$FSTAB" "$FSTAB_BACKUP"
+	fi
+
+	: > "$FSTAB.codex-new"
+	while IFS= read -r line || [ -n "$line" ]; do
+		case "$line" in
+			\#*) $BB printf '%s\n' "$line" >> "$FSTAB.codex-new" ;;
+			*mmcblk0p7*|*6BDD-B5CA*|*android_bootloader*|*/boot/efi*)
+				$BB printf '# codex-disabled-efi-mount: %s\n' "$line" >> "$FSTAB.codex-new"
+				$BB printf '%s\n' "[codex-repair] Disabled failing EFI mount: $line" >> "$LOG"
+				;;
+			*) $BB printf '%s\n' "$line" >> "$FSTAB.codex-new" ;;
+		esac
+	done < "$FSTAB"
+	$BB chmod --reference="$FSTAB" "$FSTAB.codex-new" 2>/dev/null || $BB chmod 0644 "$FSTAB.codex-new"
+	$BB mv "$FSTAB.codex-new" "$FSTAB"
+fi
+
+$BB ln -sf /lib/systemd/system/graphical.target "$ROOT/etc/systemd/system/default.target"
+$BB printf '%s\n' "[codex-repair] Set default.target to graphical.target" >> "$LOG"
+
+if [ -f "$ROOT/lib/systemd/system/lightdm.service" ]; then
+	$BB ln -sf /lib/systemd/system/lightdm.service "$ROOT/etc/systemd/system/display-manager.service"
+	$BB mkdir -p "$ROOT/etc/systemd/system/graphical.target.wants"
+	$BB ln -sf /lib/systemd/system/lightdm.service "$ROOT/etc/systemd/system/graphical.target.wants/lightdm.service"
+	$BB printf '%s\n' "[codex-repair] Enabled LightDM" >> "$LOG"
+fi
+
+if [ -f "$ROOT/lib/systemd/system/getty@.service" ]; then
+	$BB mkdir -p "$ROOT/etc/systemd/system/getty.target.wants"
+	$BB ln -sf /lib/systemd/system/getty@.service "$ROOT/etc/systemd/system/getty.target.wants/getty@tty1.service"
+	$BB printf '%s\n' "[codex-repair] Enabled getty on tty1" >> "$LOG"
+fi
+
+for unit in NetworkManager.service ssh.service; do
+	if [ -f "$ROOT/lib/systemd/system/$unit" ]; then
+		$BB mkdir -p "$ROOT/etc/systemd/system/multi-user.target.wants"
+		$BB ln -sf "/lib/systemd/system/$unit" "$ROOT/etc/systemd/system/multi-user.target.wants/$unit"
+		$BB printf '%s\n' "[codex-repair] Enabled $unit" >> "$LOG"
+	fi
+done
+
+if [ -f /repair/codex-graphical-recovery.service ] && [ -f /repair/codex-graphical-recovery ]; then
+	$BB mkdir -p "$ROOT/usr/local/sbin" "$ROOT/etc/systemd/system/multi-user.target.wants"
+	$BB cp /repair/codex-graphical-recovery "$ROOT/usr/local/sbin/codex-graphical-recovery"
+	$BB chmod 0755 "$ROOT/usr/local/sbin/codex-graphical-recovery"
+	$BB cp /repair/codex-graphical-recovery.service "$ROOT/etc/systemd/system/codex-graphical-recovery.service"
+	$BB chmod 0644 "$ROOT/etc/systemd/system/codex-graphical-recovery.service"
+	$BB ln -sf /etc/systemd/system/codex-graphical-recovery.service \
+		"$ROOT/etc/systemd/system/multi-user.target.wants/codex-graphical-recovery.service"
+	$BB printf '%s\n' "[codex-repair] Installed graphical/network recovery service" >> "$LOG"
+fi
+
+if [ -d '/repair/modules/6.14.0+' ]; then
+	$BB mkdir -p "$ROOT/lib/modules"
+	$BB cp -a '/repair/modules/6.14.0+' "$ROOT/lib/modules/"
+	$BB printf '%s\n' "[codex-repair] Restored kernel modules for 6.14.0+" >> "$LOG"
+fi
+
+$BB ln -sf /dev/null "$ROOT/etc/systemd/system/casper-md5check.service"
+$BB printf '%s\n' "[codex-repair] Masked casper-md5check.service" >> "$LOG"
+$BB printf '%s\n' "[codex-repair] Repair complete; continuing normal boot" >> "$LOG"
+$BB sync
+
+$BB mount --move /dev "$ROOT/dev"
+$BB mount --move /proc "$ROOT/proc"
+$BB mount --move /sys "$ROOT/sys"
+exec $BB switch_root "$ROOT" /sbin/init
