@@ -30,3 +30,8 @@ flash-kit/backup/
 *.order
 *.symvers
 modules.builtin
+
+# === MIUI restore payloads (large, re-downloadable) ===
+miui-restore/rom/
+miui-restore/apks/
+miui-restore/logs/

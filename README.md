@@ -2,6 +2,8 @@
 
 将小米平板 2 (latte) 从 Android 刷为 Xubuntu 24.04 LTS 的完整工具包和移植指南。
 
+> **2026-09-27 起设备已刷回官方 MIUI 9.6.2.0**（Linux 触屏、蓝牙、休眠无法满足日常使用）。刷机方案、下载链接和省电设置见 [`miui-restore/README.md`](miui-restore/README.md)。
+
 > **状态**: 触屏 ✅ | 横屏 ✅ | WiFi ✅ | 缩放 ✅ | 屏幕键盘 ✅ | 电池 % 🔧 | 蓝牙 ❌ | 摄像头 ❌
 
 ---
