@@ -5,14 +5,14 @@
 # 用法:
 #   ./flash-miui.sh            预检（只读，不写入任何分区）
 #   ./flash-miui.sh --go       预检通过后正式刷写（会清空平板上的全部数据）
-#   ./flash-miui.sh --post     刷完并开启 USB 调试后，安装 Firefox 143
+#   ./flash-miui.sh --post     刷完并开启 USB 调试后，安装浏览器
 #   ./flash-miui.sh --verified 切换 bootloader 到 verified，消除开机 ERROR CODE 03
 set -euo pipefail
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
 ROM="$HERE/rom/latte_images_V9.6.2.0.LACCNFD_20180702.0000.00_5.1_cn"
 IMG="$ROM/images"
-APK="$HERE/apks/fenix-143.0.4.multi.android-x86.apk"
+APK="$HERE/apks/bromite-95.0.4638.79-x86_ChromePublic.apk"  # Chromium 95：支持 Android 5.x 的最后一个 Chromium 版本
 SERIAL="A3P4E8A32A64"
 LOG="$HERE/logs/flash-$(date +%Y%m%d-%H%M%S).log"
 
@@ -69,12 +69,40 @@ flash() {
     fb reboot
 }
 
+# 广告、推广、统计类预装应用；MIUI 禁止 pm disable-user，只能按用户卸载（恢复出厂后会回来）
+BLOAT="com.mi.liveassistant com.yidian.zxpad com.xiaomi.padshop com.xiaomi.jr
+com.miui.klo.bugreport com.duokan.hdreader com.miui.analytics
+com.miui.systemAdSolution com.miui.video com.miui.player com.miui.fm
+com.xiaomi.gamecenter.pad com.xiaomi.gamecenter.sdk.service com.xiaomi.mitunes
+com.miui.translation.kingsoft com.miui.translation.youdao
+com.miui.translationservice com.android.email com.miui.bugreport com.android.midrive"
+
 post() {
-    step "安装 Firefox 143.0.4 (x86)"
-    adb -s "$SERIAL" wait-for-device
+    local a="adb -s $SERIAL"
+    $a wait-for-device
+    [ "$($a get-state 2>/dev/null)" = "device" ] || die "adb 未授权：在平板上允许 USB 调试"
+    $a shell getprop ro.build.version.incremental
+
+    step "安装 Bromite 95.0.4638.79 (Chromium, x86)"
     (cd "$HERE/apks" && sha256sum -c --quiet "$HERE/SHA256SUMS.apks") || die "APK 校验失败"
-    adb -s "$SERIAL" shell getprop ro.build.version.incremental
-    adb -s "$SERIAL" install -r "$APK"
+    # adb install 在这台设备上会卡住，改为先推送再用 pm 安装
+    $a push "$APK" /data/local/tmp/browser.apk
+    $a shell pm install -r /data/local/tmp/browser.apk
+    $a shell rm /data/local/tmp/browser.apk
+
+    step "省电设置"
+    $a shell settings put secure location_providers_allowed -network
+    $a shell settings put secure location_providers_allowed -gps
+    for k in window_animation_scale transition_animation_scale animator_duration_scale; do
+        $a shell settings put global $k 0.5
+    done
+    $a shell settings put global mobile_data 0
+
+    step "移除预装应用"
+    for p in $BLOAT; do
+        printf '%s: ' "$p"
+        $a shell pm uninstall -k --user 0 "$p" | tr -d '\r' | tail -1
+    done
 }
 
 case "${1:-}" in

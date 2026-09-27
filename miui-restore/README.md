@@ -8,7 +8,8 @@
 | 文件 | `latte_images_V9.6.2.0.LACCNFD_20180702.0000.00_5.1_cn_6f8e742f80.tgz`（1,076,439,956 字节） |
 | 来源 | 小米官方 CDN：`https://cdnorg.d.miui.com/V9.6.2.0.LACCNFD/<文件名>` |
 | MD5 | `6f8e742f80357e695135637b77137abc`（与文件名里的 `6f8e742f80` 一致） |
-| 浏览器 | Firefox 143.0.4 x86：最后一个支持 Android 5–7 和 32 位 x86 的版本，minSdk 21，Mozilla 签名 |
+| 浏览器（默认） | **Bromite 95.0.4638.79 x86**（Chromium 内核）。Chrome/Chromium 95 是支持 Android 5.x 的最后一个版本，从 96 起要求 Android 6。minSdk 21，签名证书 SHA-256 `e1ee5cd0…0c3b9504`（Bromite 官方） |
+| 浏览器（备用） | Firefox 143.0.4 x86：Gecko 内核，最后一个支持 Android 5–7 和 32 位 x86 的版本。部分 three.js 或特效网页显示不正常，所以改用 Bromite |
 
 镜像和 APK 的 SHA-256 在 `SHA256SUMS.rom`、`SHA256SUMS.apks` 里。`rom/`、`apks/`、`logs/` 已经加进 `.gitignore`。
 
@@ -21,6 +22,8 @@ cd miui-restore
 mkdir -p rom apks
 curl -fL -o rom/latte_images_V9.6.2.0.LACCNFD_20180702.0000.00_5.1_cn_6f8e742f80.tgz \
   https://cdnorg.d.miui.com/V9.6.2.0.LACCNFD/latte_images_V9.6.2.0.LACCNFD_20180702.0000.00_5.1_cn_6f8e742f80.tgz
+curl -fL -o apks/bromite-95.0.4638.79-x86_ChromePublic.apk \
+  https://github.com/bromite/bromite/releases/download/95.0.4638.79/x86_ChromePublic.apk
 curl -fL -o apks/fenix-143.0.4.multi.android-x86.apk \
   https://archive.mozilla.org/pub/fenix/releases/143.0.4/android/fenix-143.0.4-android-x86/fenix-143.0.4.multi.android-x86.apk
 (cd apks && sha256sum -c ../SHA256SUMS.apks)
@@ -29,7 +32,8 @@ curl -fL -o apks/fenix-143.0.4.multi.android-x86.apk \
 | 资源 | 链接 | 校验 |
 |---|---|---|
 | MIUI 线刷包 | https://cdnorg.d.miui.com/V9.6.2.0.LACCNFD/latte_images_V9.6.2.0.LACCNFD_20180702.0000.00_5.1_cn_6f8e742f80.tgz（`bigota.d.miui.com` 返回 403，`bn.d.miui.com` 也可用） | MD5 `6f8e742f80357e695135637b77137abc` |
-| Firefox 143.0.4 x86 | https://archive.mozilla.org/pub/fenix/releases/143.0.4/android/fenix-143.0.4-android-x86/fenix-143.0.4.multi.android-x86.apk | SHA-256 见 `SHA256SUMS.apks`；签名证书 SHA-256 `a78b62a5…2ea319b04`（Mozilla Release Engineering） |
+| Bromite 95.0.4638.79 x86 | https://github.com/bromite/bromite/releases/download/95.0.4638.79/x86_ChromePublic.apk | SHA-256 见 `SHA256SUMS.apks`；签名证书 SHA-256 `e1ee5cd076d7b0dc84cb2b45fb78b86df2eb39a3b6c56ba3dc292a5e0c3b9504` |
+| Firefox 143.0.4 x86（备用） | https://archive.mozilla.org/pub/fenix/releases/143.0.4/android/fenix-143.0.4-android-x86/fenix-143.0.4.multi.android-x86.apk | SHA-256 见 `SHA256SUMS.apks`；签名证书 SHA-256 `a78b62a5…2ea319b04`（Mozilla Release Engineering） |
 | 版本列表 | https://xiaomirom.com/en/rom/mipad-2-latte-china-fastboot-recovery-rom/ | — |
 
 线刷包只需保留 `.tgz`；`flash-miui.sh` 发现没有解压目录时会自动解压。
@@ -57,7 +61,7 @@ curl -fL -o apks/fenix-143.0.4.multi.android-x86.apk \
 5. 正式刷写：`./miui-restore/flash-miui.sh --go`，大约 5–10 分钟。任何一步失败都会立即停止。
 6. 首次开机需要 5–10 分钟。开机后在设置里连续点"MIUI 版本"打开开发者选项，再打开 **USB 调试**。
 7. 可选：消除开机警告。进入 fastboot，运行 `./miui-restore/flash-miui.sh --verified`（可能清空数据，所以放在装应用之前），详见 [`../BOOTLOADER-VERIFIED.md`](../BOOTLOADER-VERIFIED.md)。开机后重新打开 USB 调试。
-8. 安装浏览器：`./miui-restore/flash-miui.sh --post`
+8. 安装 Bromite、做省电设置、移除预装应用：`./miui-restore/flash-miui.sh --post`
 
 所有输出都记录在 `logs/` 里。
 
@@ -88,8 +92,9 @@ com.miui.translationservice com.android.email com.miui.bugreport com.android.mid
 保留未动的：`com.xiaomi.xmsf`（推送）、`com.miui.powerkeeper` 和 `com.miui.powercenter`（MIUI 自带的省电管理）、`com.intel.thermal`（温控）。
 
 使用建议：
-- 在 Firefox 里把 Guacamole、ttyd、Excalidraw 这些网页"添加到主屏幕"，当应用用。
-- 不需要在后台保持 SSH 连接的话，不用把 Firefox 加进 MIUI 的自启动白名单，让系统正常休眠最省电。
+- 在 Bromite 里把 Guacamole、ttyd、Excalidraw 这些网页"添加到主屏幕"，当应用用。
+- WebGL 网页打不开时，打开 `chrome://gpu` 看 WebGL 是否被 GPU 黑名单禁用了；如果是，在 `chrome://flags` 里启用 "Override software rendering list"。
+- 不需要在后台保持 SSH 连接的话，不用把 Bromite 加进 MIUI 的自启动白名单，让系统正常休眠最省电。
 
 ## 出问题怎么办
 
