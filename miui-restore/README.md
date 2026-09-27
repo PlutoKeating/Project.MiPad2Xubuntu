@@ -108,3 +108,16 @@ com.miui.translationservice com.android.email com.miui.bugreport com.android.mid
 - **卡在开机 Mi 标志**：重新进 DNX，再运行一次 `--go`。
 - **进不了 fastboot**：参考 xiaomi.eu 上的 [仅 DNX 模式救砖](https://xiaomi.eu/community/threads/how-to-unbrick-mi-pad-with-only-dnx-fastboot-mode.36217/)，用 `fastboot boot loader.efi` 进入 fastboot 后重新刷。
 - **想回到 Linux**：上级目录里保留了 `mipad2-boot-*.img` 等备份，但 `userdata` 里的根文件系统需要重新写入。
+
+## adb 常开与 WiFi adb
+
+- **开发者选项、USB 调试**：保存在系统设置里（`development_settings_enabled=1`、`adb_enabled=1`），重启后会保持开启，不需要额外处理。
+- **WiFi adb**：`./miui-restore/wifi-adb.sh` 用 USB 开启 `adb tcpip 5555` 并连接。**没有 root 时，重启后会失效。**要让它重启后自动开启，得写入 `persist.adb.tcp.port`，但 SELinux 不允许 shell 用户写 `persist.*` 属性：`setprop` 返回 0，实际没有写进去。`service.adb.tcp.port` 能写，但重启后会清空。所以目前的做法是：每次重启后用 USB 连一次，运行这个脚本。
+- 真正做到常开需要 root，而 root 需要先把 bootloader 从 verified 切回 unlocked（会清空数据），再刷修改过的 boot 镜像。
+
+## 电池 / 电量计诊断
+
+2026-09-27 发现 BQ27520 电量计记录的满电容量 `CHARGE_FULL` 只有 **70 mAh**，而设计容量是 6190 mAh，导致电量百分比乱跳（72% → 0% 自动关机 → 100%）。循环次数 138 次，健康状态 Good。
+
+- `./miui-restore/battery-log.sh [ip:port]`：通过 WiFi adb 每分钟记录一次状态、电量、电压、电流和 `CHARGE_FULL`，写入 `logs/battery-*.csv`。
+- 校准步骤：用墙插充电器充到 100% 后继续插 2 小时以上 → 拔掉电源，用到自动关机 → 静置 1 小时以上 → 一次性充满。之后检查 `CHARGE_FULL` 是否回到几千 mAh。
