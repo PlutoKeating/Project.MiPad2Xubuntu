@@ -76,7 +76,15 @@ adb shell settings put global window_animation_scale 0
 adb shell settings put global transition_animation_scale 0
 adb shell settings put global animator_duration_scale 0
 adb shell settings put global mobile_data 0
+adb shell settings put global wifi_sleep_policy 2                   # 熄屏时 WiFi 不休眠（MIUI 默认值就是 2）
+adb shell settings put global wifi_suspend_optimizations_enabled 0  # 关闭 WiFi 驱动的 suspend 省电模式
 ```
+
+Bromite 的 MIUI 后台策略设为「无限制」（默认是「智能限制后台运行」）。这个设置保存在 powerkeeper 的 provider 里，需要 MIUI 签名权限，adb 没法直接写。所以脚本的做法是：打开设置页 `am start -a miui.intent.action.HIDDEN_APPS_CONFIG_ACTIVITY --es package_name org.bromite.bromite`，用 uiautomator 找到「无限制」按钮并点击，再检查是否已选中。
+
+验证 WiFi 设置是否生效：`adb shell dumpsys wifi | grep -E "mSleepPolicy|mUserWantsSuspendOpt"`，应显示 `2` 和 `false`。
+
+Android 5.1 没有 Doze，所以系统层面的「电池优化白名单」不存在，只有上面这个 MIUI 后台策略需要改。
 
 移除了广告、推广和统计类预装应用（`pm uninstall -k --user 0`）。MIUI 不允许 `pm disable-user`，所以用了卸载。APK 仍保留在 system 分区，恢复出厂设置或重刷后就会回来：
 
@@ -94,7 +102,6 @@ com.miui.translationservice com.android.email com.miui.bugreport com.android.mid
 使用建议：
 - 在 Bromite 里把 Guacamole、ttyd、Excalidraw 这些网页"添加到主屏幕"，当应用用。
 - WebGL 网页打不开时，打开 `chrome://gpu` 看 WebGL 是否被 GPU 黑名单禁用了；如果是，在 `chrome://flags` 里启用 "Override software rendering list"。
-- 不需要在后台保持 SSH 连接的话，不用把 Bromite 加进 MIUI 的自启动白名单，让系统正常休眠最省电。
 
 ## 出问题怎么办
 

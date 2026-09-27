@@ -97,6 +97,27 @@ post() {
         $a shell settings put global $k 0
     done
     $a shell settings put global mobile_data 0
+    # WiFi：熄屏不休眠，并关闭驱动的 suspend 省电模式
+    $a shell settings put global wifi_sleep_policy 2
+    $a shell settings put global wifi_suspend_optimizations_enabled 0
+
+    step "浏览器省电策略设为「无限制」"
+    # powerkeeper 的 provider 需要 MIUI 签名权限，只能打开设置页，再按文字定位按钮点击
+    $a shell am start -a miui.intent.action.HIDDEN_APPS_CONFIG_ACTIVITY \
+        --es package_name org.bromite.bromite --es package_label Bromite
+    sleep 2
+    local xy
+    ui() { $a shell uiautomator dump /sdcard/ui.xml >/dev/null; $a shell cat /sdcard/ui.xml; }
+    xy=$(ui | python3 -c '
+import re, sys
+m = re.search(r"text=\"无限制\"[^>]*bounds=\"\[(\d+),(\d+)\]\[(\d+),(\d+)\]\"", sys.stdin.read())
+print((int(m[1]) + int(m[3])) // 2, (int(m[2]) + int(m[4])) // 2) if m else None')
+    [ -n "$xy" ] || die "没找到「无限制」选项"
+    $a shell input tap $xy
+    sleep 1
+    ui | grep -q 'text="无限制"[^>]*checked="true"' \
+        && echo "Bromite: 无限制" || echo "!! 请在平板上手动确认"
+    $a shell input keyevent KEYCODE_HOME
 
     step "移除预装应用"
     for p in $BLOAT; do
