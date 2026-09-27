@@ -72,9 +72,9 @@ MIUI 默认值已经比较省电：1 分钟自动锁屏、自动亮度、蓝牙�
 ```bash
 adb shell settings put secure location_providers_allowed -network
 adb shell settings put secure location_providers_allowed -gps
-adb shell settings put global window_animation_scale 0.5
-adb shell settings put global transition_animation_scale 0.5
-adb shell settings put global animator_duration_scale 0.5
+adb shell settings put global window_animation_scale 0
+adb shell settings put global transition_animation_scale 0
+adb shell settings put global animator_duration_scale 0
 adb shell settings put global mobile_data 0
 ```
 

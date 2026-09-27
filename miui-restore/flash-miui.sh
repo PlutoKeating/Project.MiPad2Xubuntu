@@ -94,7 +94,7 @@ post() {
     $a shell settings put secure location_providers_allowed -network
     $a shell settings put secure location_providers_allowed -gps
     for k in window_animation_scale transition_animation_scale animator_duration_scale; do
-        $a shell settings put global $k 0.5
+        $a shell settings put global $k 0
     done
     $a shell settings put global mobile_data 0
 
