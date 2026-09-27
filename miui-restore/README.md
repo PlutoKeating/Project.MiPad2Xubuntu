@@ -56,7 +56,8 @@ curl -fL -o apks/fenix-143.0.4.multi.android-x86.apk \
    - 如果 `product` 不是 `latte`，脚本会提示先执行 `fastboot boot images/loader.efi`。
 5. 正式刷写：`./miui-restore/flash-miui.sh --go`，大约 5–10 分钟。任何一步失败都会立即停止。
 6. 首次开机需要 5–10 分钟。开机后在设置里连续点"MIUI 版本"打开开发者选项，再打开 **USB 调试**。
-7. 安装浏览器：`./miui-restore/flash-miui.sh --post`
+7. 可选：消除开机警告。进入 fastboot，运行 `./miui-restore/flash-miui.sh --verified`（可能清空数据，所以放在装应用之前），详见 [`../BOOTLOADER-VERIFIED.md`](../BOOTLOADER-VERIFIED.md)。开机后重新打开 USB 调试。
+8. 安装浏览器：`./miui-restore/flash-miui.sh --post`
 
 所有输出都记录在 `logs/` 里。
 

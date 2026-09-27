@@ -6,6 +6,7 @@
 #   ./flash-miui.sh            预检（只读，不写入任何分区）
 #   ./flash-miui.sh --go       预检通过后正式刷写（会清空平板上的全部数据）
 #   ./flash-miui.sh --post     刷完并开启 USB 调试后，安装 Firefox 143
+#   ./flash-miui.sh --verified 切换 bootloader 到 verified，消除开机 ERROR CODE 03
 set -euo pipefail
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
@@ -80,6 +81,13 @@ case "${1:-}" in
     "")     preflight; echo; echo "预检通过。确认后运行: $0 --go" ;;
     --go)   preflight; flash ;;
     --post) post ;;
+    --verified)
+        # 见 ../BOOTLOADER-VERIFIED.md；可能清空数据，需要在平板上确认
+        [ "$(fastboot devices | awk '{print $1}')" = "$SERIAL" ] || die "平板未处于 fastboot 模式"
+        step "切换 bootloader 到 verified，请在平板上确认 Set bootloader to Verified?"
+        fb oem verified
+        fb getvar all 2>&1 | grep -Ei "device-state|unlocked"
+        fb reboot ;;
     *)      die "未知参数 $1" ;;
 esac
 echo "日志: $LOG"
